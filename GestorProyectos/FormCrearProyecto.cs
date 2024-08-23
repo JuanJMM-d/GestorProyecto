@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace GestorProyectos
+{
+    public partial class FormCrearProyecto : Form
+    {
+        public FormCrearProyecto()
+        {
+            InitializeComponent();
+        }
+
+        private void FormCrearProyecto_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
