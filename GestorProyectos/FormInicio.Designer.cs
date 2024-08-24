@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInicio));
             this.panelMenuIzq = new System.Windows.Forms.Panel();
+            this.btnProyectosLista = new System.Windows.Forms.Button();
             this.btnMenuGraficos = new System.Windows.Forms.Button();
             this.btnMenuBuzon = new System.Windows.Forms.Button();
             this.btnMenuEmpleados = new System.Windows.Forms.Button();
@@ -41,7 +42,6 @@
             this.panelBarraTitulo = new System.Windows.Forms.Panel();
             this.lblMenuActual = new System.Windows.Forms.Label();
             this.panelMenuSeleccionado = new System.Windows.Forms.Panel();
-            this.btnProyectosLista = new System.Windows.Forms.Button();
             this.panelMenuIzq.SuspendLayout();
             this.panelPerfil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picturePerfilAdmin)).BeginInit();
@@ -60,15 +60,25 @@
             this.panelMenuIzq.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenuIzq.Location = new System.Drawing.Point(0, 0);
             this.panelMenuIzq.Name = "panelMenuIzq";
-            this.panelMenuIzq.Size = new System.Drawing.Size(228, 662);
+            this.panelMenuIzq.Size = new System.Drawing.Size(270, 662);
             this.panelMenuIzq.TabIndex = 0;
+            // 
+            // btnProyectosLista
+            // 
+            this.btnProyectosLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProyectosLista.Location = new System.Drawing.Point(29, 273);
+            this.btnProyectosLista.Name = "btnProyectosLista";
+            this.btnProyectosLista.Size = new System.Drawing.Size(175, 48);
+            this.btnProyectosLista.TabIndex = 6;
+            this.btnProyectosLista.Text = " 📂 Proyectos";
+            this.btnProyectosLista.UseVisualStyleBackColor = true;
             // 
             // btnMenuGraficos
             // 
             this.btnMenuGraficos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenuGraficos.Location = new System.Drawing.Point(29, 487);
             this.btnMenuGraficos.Name = "btnMenuGraficos";
-            this.btnMenuGraficos.Size = new System.Drawing.Size(147, 48);
+            this.btnMenuGraficos.Size = new System.Drawing.Size(193, 48);
             this.btnMenuGraficos.TabIndex = 5;
             this.btnMenuGraficos.Text = "📉 Graficos..";
             this.btnMenuGraficos.UseVisualStyleBackColor = true;
@@ -78,7 +88,7 @@
             this.btnMenuBuzon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenuBuzon.Location = new System.Drawing.Point(29, 412);
             this.btnMenuBuzon.Name = "btnMenuBuzon";
-            this.btnMenuBuzon.Size = new System.Drawing.Size(154, 48);
+            this.btnMenuBuzon.Size = new System.Drawing.Size(193, 48);
             this.btnMenuBuzon.TabIndex = 4;
             this.btnMenuBuzon.Text = "📫 Buzon";
             this.btnMenuBuzon.UseVisualStyleBackColor = true;
@@ -88,7 +98,7 @@
             this.btnMenuEmpleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenuEmpleados.Location = new System.Drawing.Point(29, 337);
             this.btnMenuEmpleados.Name = "btnMenuEmpleados";
-            this.btnMenuEmpleados.Size = new System.Drawing.Size(161, 48);
+            this.btnMenuEmpleados.Size = new System.Drawing.Size(193, 48);
             this.btnMenuEmpleados.TabIndex = 3;
             this.btnMenuEmpleados.Text = "👥 Empleados";
             this.btnMenuEmpleados.UseVisualStyleBackColor = true;
@@ -98,7 +108,7 @@
             this.btnCrearProycto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCrearProycto.Location = new System.Drawing.Point(29, 110);
             this.btnCrearProycto.Name = "btnCrearProycto";
-            this.btnCrearProycto.Size = new System.Drawing.Size(193, 64);
+            this.btnCrearProycto.Size = new System.Drawing.Size(217, 64);
             this.btnCrearProycto.TabIndex = 2;
             this.btnCrearProycto.Text = "➕ Crear Proyecto";
             this.btnCrearProycto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -109,7 +119,7 @@
             this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.Location = new System.Drawing.Point(29, 199);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(138, 48);
+            this.btnHome.Size = new System.Drawing.Size(175, 48);
             this.btnHome.TabIndex = 1;
             this.btnHome.Text = "🏠 Home";
             this.btnHome.UseVisualStyleBackColor = true;
@@ -121,7 +131,7 @@
             this.panelPerfil.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelPerfil.Location = new System.Drawing.Point(0, 0);
             this.panelPerfil.Name = "panelPerfil";
-            this.panelPerfil.Size = new System.Drawing.Size(228, 73);
+            this.panelPerfil.Size = new System.Drawing.Size(270, 73);
             this.panelPerfil.TabIndex = 0;
             // 
             // picturePerfilAdmin
@@ -149,9 +159,9 @@
             // 
             this.panelBarraTitulo.Controls.Add(this.lblMenuActual);
             this.panelBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelBarraTitulo.Location = new System.Drawing.Point(228, 0);
+            this.panelBarraTitulo.Location = new System.Drawing.Point(270, 0);
             this.panelBarraTitulo.Name = "panelBarraTitulo";
-            this.panelBarraTitulo.Size = new System.Drawing.Size(985, 50);
+            this.panelBarraTitulo.Size = new System.Drawing.Size(993, 50);
             this.panelBarraTitulo.TabIndex = 1;
             // 
             // lblMenuActual
@@ -167,31 +177,23 @@
             // panelMenuSeleccionado
             // 
             this.panelMenuSeleccionado.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMenuSeleccionado.Location = new System.Drawing.Point(228, 50);
+            this.panelMenuSeleccionado.Location = new System.Drawing.Point(270, 50);
             this.panelMenuSeleccionado.Name = "panelMenuSeleccionado";
-            this.panelMenuSeleccionado.Size = new System.Drawing.Size(985, 612);
+            this.panelMenuSeleccionado.Size = new System.Drawing.Size(993, 612);
             this.panelMenuSeleccionado.TabIndex = 2;
-            // 
-            // btnProyectosLista
-            // 
-            this.btnProyectosLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProyectosLista.Location = new System.Drawing.Point(29, 273);
-            this.btnProyectosLista.Name = "btnProyectosLista";
-            this.btnProyectosLista.Size = new System.Drawing.Size(154, 48);
-            this.btnProyectosLista.TabIndex = 6;
-            this.btnProyectosLista.Text = " 📂 Proyectos";
-            this.btnProyectosLista.UseVisualStyleBackColor = true;
+            this.panelMenuSeleccionado.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenuSeleccionado_Paint);
             // 
             // FormInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1213, 662);
+            this.ClientSize = new System.Drawing.Size(1263, 662);
             this.Controls.Add(this.panelMenuSeleccionado);
             this.Controls.Add(this.panelBarraTitulo);
             this.Controls.Add(this.panelMenuIzq);
             this.Name = "FormInicio";
             this.Text = "ForrmInicio";
+            this.Load += new System.EventHandler(this.FormInicio_Load);
             this.panelMenuIzq.ResumeLayout(false);
             this.panelPerfil.ResumeLayout(false);
             this.panelPerfil.PerformLayout();

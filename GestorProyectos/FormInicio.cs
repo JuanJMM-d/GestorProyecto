@@ -12,9 +12,23 @@ namespace GestorProyectos
 {
     public partial class FormInicio : Form
     {
-        public FormInicio()
+
+        public FormInicio(Form1 form1)
         {
             InitializeComponent();
+            this.form1 = form1;
+        }
+
+        private void FormInicio_Load(object sender, EventArgs e)
+        {
+        }
+
+        //variables globales
+        Form1 form1;
+
+        private void panelMenuSeleccionado_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
