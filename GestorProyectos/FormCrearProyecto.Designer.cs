@@ -43,23 +43,9 @@
             this.dateTimeLimiteProyecto = new System.Windows.Forms.DateTimePicker();
             this.dateTimeInicioProyecto = new System.Windows.Forms.DateTimePicker();
             this.txtDescripcionProyecto = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.groupBoxTareas = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.txtEmpleadoNombre = new System.Windows.Forms.TextBox();
-            this.txtNombreTarea = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.grpEmpleados = new System.Windows.Forms.GroupBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.groupBoxTareas.SuspendLayout();
-            this.grpEmpleados.SuspendLayout();
+            this.btnCrearProyecto = new System.Windows.Forms.Button();
+            this.txtIdProyecto = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -76,7 +62,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 79);
+            this.label2.Location = new System.Drawing.Point(12, 122);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 22);
             this.label2.TabIndex = 1;
@@ -87,7 +73,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 136);
+            this.label3.Location = new System.Drawing.Point(12, 158);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(103, 22);
             this.label3.TabIndex = 2;
@@ -120,7 +106,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(12, 439);
+            this.label6.Location = new System.Drawing.Point(572, 116);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(121, 22);
             this.label6.TabIndex = 5;
@@ -152,18 +138,20 @@
             // txtNombreProyecto
             // 
             this.txtNombreProyecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreProyecto.Location = new System.Drawing.Point(172, 73);
+            this.txtNombreProyecto.Location = new System.Drawing.Point(172, 116);
             this.txtNombreProyecto.Name = "txtNombreProyecto";
             this.txtNombreProyecto.Size = new System.Drawing.Size(212, 28);
             this.txtNombreProyecto.TabIndex = 8;
+            this.txtNombreProyecto.TextChanged += new System.EventHandler(this.txtNombreProyecto_TextChanged);
             // 
             // txtCategoriaProyecto
             // 
             this.txtCategoriaProyecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCategoriaProyecto.Location = new System.Drawing.Point(172, 136);
+            this.txtCategoriaProyecto.Location = new System.Drawing.Point(172, 152);
             this.txtCategoriaProyecto.Name = "txtCategoriaProyecto";
             this.txtCategoriaProyecto.Size = new System.Drawing.Size(212, 28);
             this.txtCategoriaProyecto.TabIndex = 9;
+            this.txtCategoriaProyecto.TextChanged += new System.EventHandler(this.txtCategoriaProyecto_TextChanged);
             // 
             // comBoxEstadoProyecto
             // 
@@ -178,6 +166,7 @@
             this.comBoxEstadoProyecto.Name = "comBoxEstadoProyecto";
             this.comBoxEstadoProyecto.Size = new System.Drawing.Size(212, 30);
             this.comBoxEstadoProyecto.TabIndex = 10;
+            this.comBoxEstadoProyecto.SelectedIndexChanged += new System.EventHandler(this.comBoxEstadoProyecto_SelectedIndexChanged);
             // 
             // txtPresupuestoProyecto
             // 
@@ -186,6 +175,7 @@
             this.txtPresupuestoProyecto.Name = "txtPresupuestoProyecto";
             this.txtPresupuestoProyecto.Size = new System.Drawing.Size(212, 28);
             this.txtPresupuestoProyecto.TabIndex = 11;
+            this.txtPresupuestoProyecto.TextChanged += new System.EventHandler(this.txtPresupuestoProyecto_TextChanged);
             // 
             // dateTimeLimiteProyecto
             // 
@@ -196,6 +186,7 @@
             this.dateTimeLimiteProyecto.Name = "dateTimeLimiteProyecto";
             this.dateTimeLimiteProyecto.Size = new System.Drawing.Size(200, 27);
             this.dateTimeLimiteProyecto.TabIndex = 12;
+            this.dateTimeLimiteProyecto.ValueChanged += new System.EventHandler(this.dateTimeLimiteProyecto_ValueChanged);
             // 
             // dateTimeInicioProyecto
             // 
@@ -206,186 +197,59 @@
             this.dateTimeInicioProyecto.Name = "dateTimeInicioProyecto";
             this.dateTimeInicioProyecto.Size = new System.Drawing.Size(200, 27);
             this.dateTimeInicioProyecto.TabIndex = 13;
+            this.dateTimeInicioProyecto.ValueChanged += new System.EventHandler(this.dateTimeInicioProyecto_ValueChanged);
             // 
             // txtDescripcionProyecto
             // 
             this.txtDescripcionProyecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescripcionProyecto.Location = new System.Drawing.Point(149, 402);
+            this.txtDescripcionProyecto.Location = new System.Drawing.Point(442, 158);
             this.txtDescripcionProyecto.Multiline = true;
             this.txtDescripcionProyecto.Name = "txtDescripcionProyecto";
-            this.txtDescripcionProyecto.Size = new System.Drawing.Size(356, 68);
+            this.txtDescripcionProyecto.Size = new System.Drawing.Size(386, 245);
             this.txtDescripcionProyecto.TabIndex = 14;
+            this.txtDescripcionProyecto.TextChanged += new System.EventHandler(this.txtDescripcionProyecto_TextChanged);
             // 
-            // button1
+            // btnCrearProyecto
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(697, 439);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(133, 42);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Crear";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnCrearProyecto.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnCrearProyecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCrearProyecto.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnCrearProyecto.Location = new System.Drawing.Point(543, 428);
+            this.btnCrearProyecto.Name = "btnCrearProyecto";
+            this.btnCrearProyecto.Size = new System.Drawing.Size(203, 42);
+            this.btnCrearProyecto.TabIndex = 15;
+            this.btnCrearProyecto.Text = "Crear Proyecto";
+            this.btnCrearProyecto.UseVisualStyleBackColor = false;
+            this.btnCrearProyecto.Click += new System.EventHandler(this.btnCrearProyecto_Click);
             // 
-            // groupBoxTareas
+            // txtIdProyecto
             // 
-            this.groupBoxTareas.Controls.Add(this.button3);
-            this.groupBoxTareas.Controls.Add(this.grpEmpleados);
-            this.groupBoxTareas.Controls.Add(this.comboBox1);
-            this.groupBoxTareas.Controls.Add(this.label11);
-            this.groupBoxTareas.Controls.Add(this.txtNombreTarea);
-            this.groupBoxTareas.Controls.Add(this.label9);
-            this.groupBoxTareas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxTareas.Location = new System.Drawing.Point(428, 41);
-            this.groupBoxTareas.Name = "groupBoxTareas";
-            this.groupBoxTareas.Size = new System.Drawing.Size(401, 355);
-            this.groupBoxTareas.TabIndex = 16;
-            this.groupBoxTareas.TabStop = false;
-            this.groupBoxTareas.Text = "Tareas";
+            this.txtIdProyecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdProyecto.Location = new System.Drawing.Point(172, 73);
+            this.txtIdProyecto.Name = "txtIdProyecto";
+            this.txtIdProyecto.Size = new System.Drawing.Size(212, 28);
+            this.txtIdProyecto.TabIndex = 18;
+            this.txtIdProyecto.TextChanged += new System.EventHandler(this.txtIdProyecto_TextChanged);
             // 
-            // comboBox1
+            // label14
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "En curso",
-            "Finalizado",
-            "Por empezar",
-            "Pausado"});
-            this.comboBox1.Location = new System.Drawing.Point(150, 81);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(212, 30);
-            this.comboBox1.TabIndex = 22;
-            // 
-            // txtEmpleadoNombre
-            // 
-            this.txtEmpleadoNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmpleadoNombre.Location = new System.Drawing.Point(132, 66);
-            this.txtEmpleadoNombre.Name = "txtEmpleadoNombre";
-            this.txtEmpleadoNombre.Size = new System.Drawing.Size(212, 28);
-            this.txtEmpleadoNombre.TabIndex = 21;
-            // 
-            // txtNombreTarea
-            // 
-            this.txtNombreTarea.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreTarea.Location = new System.Drawing.Point(150, 35);
-            this.txtNombreTarea.Name = "txtNombreTarea";
-            this.txtNombreTarea.Size = new System.Drawing.Size(212, 28);
-            this.txtNombreTarea.TabIndex = 20;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(16, 84);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(78, 22);
-            this.label9.TabIndex = 19;
-            this.label9.Text = "Estado:";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(10, 72);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(104, 22);
-            this.label10.TabIndex = 18;
-            this.label10.Text = "Nombre E:";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(16, 38);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(85, 22);
-            this.label11.TabIndex = 17;
-            this.label11.Text = "Nombre:";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // grpEmpleados
-            // 
-            this.grpEmpleados.Controls.Add(this.button2);
-            this.grpEmpleados.Controls.Add(this.label13);
-            this.grpEmpleados.Controls.Add(this.textBox2);
-            this.grpEmpleados.Controls.Add(this.label12);
-            this.grpEmpleados.Controls.Add(this.textBox1);
-            this.grpEmpleados.Controls.Add(this.label10);
-            this.grpEmpleados.Controls.Add(this.txtEmpleadoNombre);
-            this.grpEmpleados.Location = new System.Drawing.Point(6, 117);
-            this.grpEmpleados.Name = "grpEmpleados";
-            this.grpEmpleados.Size = new System.Drawing.Size(395, 180);
-            this.grpEmpleados.TabIndex = 23;
-            this.grpEmpleados.TabStop = false;
-            this.grpEmpleados.Text = "Empleados";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(10, 114);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(65, 22);
-            this.label12.TabIndex = 22;
-            this.label12.Text = "Rol E:";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(132, 108);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(212, 28);
-            this.textBox1.TabIndex = 23;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(10, 30);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(51, 22);
-            this.label13.TabIndex = 24;
-            this.label13.Text = "Id E:";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(132, 27);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(212, 28);
-            this.textBox2.TabIndex = 25;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(246, 142);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(134, 27);
-            this.button2.TabIndex = 26;
-            this.button2.Text = "add Empleado";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(120, 311);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(134, 27);
-            this.button3.TabIndex = 27;
-            this.button3.Text = "Add Tarea";
-            this.button3.UseVisualStyleBackColor = true;
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(12, 67);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(35, 22);
+            this.label14.TabIndex = 17;
+            this.label14.Text = "ID:";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormCrearProyecto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(857, 482);
-            this.Controls.Add(this.groupBoxTareas);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.txtIdProyecto);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.btnCrearProyecto);
             this.Controls.Add(this.txtDescripcionProyecto);
             this.Controls.Add(this.dateTimeInicioProyecto);
             this.Controls.Add(this.dateTimeLimiteProyecto);
@@ -404,10 +268,6 @@
             this.Name = "FormCrearProyecto";
             this.Text = "FormCrearProyecto";
             this.Load += new System.EventHandler(this.FormCrearProyecto_Load);
-            this.groupBoxTareas.ResumeLayout(false);
-            this.groupBoxTareas.PerformLayout();
-            this.grpEmpleados.ResumeLayout(false);
-            this.grpEmpleados.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -430,20 +290,8 @@
         private System.Windows.Forms.DateTimePicker dateTimeLimiteProyecto;
         private System.Windows.Forms.DateTimePicker dateTimeInicioProyecto;
         private System.Windows.Forms.TextBox txtDescripcionProyecto;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox groupBoxTareas;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtEmpleadoNombre;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtNombreTarea;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.GroupBox grpEmpleados;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnCrearProyecto;
+        private System.Windows.Forms.TextBox txtIdProyecto;
+        private System.Windows.Forms.Label label14;
     }
 }
