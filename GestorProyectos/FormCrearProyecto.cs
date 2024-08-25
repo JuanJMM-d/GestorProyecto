@@ -13,22 +13,34 @@ namespace GestorProyectos
 {
     public partial class FormCrearProyecto : Form
     {
-        public FormCrearProyecto()
+        private DatosDeProyectos datosDeProyectos;
+        private FormInicio formInicio;
+        public FormCrearProyecto(FormInicio formInicio, FormProyectos formProyectosExistente)
         {
             InitializeComponent();
-           
+            datosDeProyectos = formInicio.GetDatosDeProyectos();
+            formProyectos = formProyectosExistente;
+            this.formInicio = formInicio;
+        }
+
+        //variables globales
+        FormProyectos formProyectos;
+        private ErrorProvider errorProvider = new ErrorProvider();
+        public static bool ProyectoCreado = false;
+        public static string IDProyectoActual;
+        public static string NombrePoryectoActual = "";
+
+
+        public void LanzarFormCrearTarea()
+        {
+            FormCrearTarea formCrearTarea = new FormCrearTarea(formInicio);
+            formCrearTarea.ShowDialog(); // Muestra el formulario de manera modal
         }
 
         private void FormCrearProyecto_Load(object sender, EventArgs e)
         {
 
         }
-
-        //variables globales
-        private ErrorProvider errorProvider;
-        public static bool ProyectoCreado = false;
-        public static string IDProyectoActual;
-
 
         //boton para crearlo
         private void btnCrearProyecto_Click(object sender, EventArgs e)
@@ -45,11 +57,14 @@ namespace GestorProyectos
                 string fechaFin = dateTimeLimiteProyecto.Value.ToString("dd/MM/yyyy");
                 string pDescrip = txtDescripcionProyecto.Text;
 
-                DatosDeProyectos.dtProyectos.Rows.Add(Id, pNombre, pCategoria, pEstado, pPresupuesto, fechaIn, fechaFin, pDescrip);
-                
+                datosDeProyectos.dtProyectos.Rows.Add(Id, pNombre, pCategoria, pEstado, pPresupuesto, fechaIn, fechaFin, pDescrip);
+                formProyectos.ActualizardgvProyectos();
+
                 IDProyectoActual = txtIdProyecto.Text;
+                NombrePoryectoActual = txtNombreProyecto.Text;
                 LanzarFormCrearTarea();
             }
+            else MessageBox.Show("err");
 
         }
 
@@ -70,7 +85,11 @@ namespace GestorProyectos
             {
                 errorProvider.SetError(txtNombreProyecto, string.Empty);
             }
-            else errorProvider.SetError(txtNombreProyecto, "Entrada no valida"); datosOk = false;
+            else
+            {
+                errorProvider.SetError(txtNombreProyecto, "Entrada no valida");
+                datosOk = false;
+            }
 
             //validar categoria
             if (string.IsNullOrEmpty(txtCategoriaProyecto.Text))
@@ -82,14 +101,22 @@ namespace GestorProyectos
             {
                 errorProvider.SetError(txtCategoriaProyecto, string.Empty);
             }
-            else errorProvider.SetError(txtCategoriaProyecto, "Entrada no valida"); datosOk = false;
+            else
+            {
+                errorProvider.SetError(txtCategoriaProyecto, "Entrada no valida");
+                datosOk = false;
+            }
 
             //verificar estado
             if (comBoxEstadoProyecto.SelectedItem != null)
             {
                 errorProvider.SetError(comBoxEstadoProyecto, string.Empty);
             }
-            else errorProvider.SetError(comBoxEstadoProyecto, "El campo no puede estar vacio"); datosOk = false;
+            else
+            {
+                errorProvider.SetError(comBoxEstadoProyecto, "El campo no puede estar vacio");
+                datosOk = false;
+            }
 
             //verificar presupuesto
             if (string.IsNullOrEmpty((txtPresupuestoProyecto.Text)))
@@ -101,19 +128,16 @@ namespace GestorProyectos
             {
                 errorProvider.SetError(txtPresupuestoProyecto, string.Empty);
             }
-            else errorProvider.SetError(txtPresupuestoProyecto, "Entrada no valida"); datosOk = false;
+            else
+            {
+                errorProvider.SetError(txtPresupuestoProyecto, "Entrada no valida");
+                datosOk = false;
+            }
 
-
-            //retonar
             return datosOk;
         }
 
-        public static void LanzarFormCrearTarea()
-        {
-            FormCrearTarea formCrearTarea = new FormCrearTarea();
-            formCrearTarea.ShowDialog(); // Muestra el formulario de manera modal no deja interactuar hazta quee se cierre   
 
-        }
 
 
 

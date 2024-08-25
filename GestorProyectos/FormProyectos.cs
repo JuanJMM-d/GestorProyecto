@@ -12,9 +12,27 @@ namespace GestorProyectos
 {
     public partial class FormProyectos : Form
     {
-        public FormProyectos()
+        public FormProyectos(FormInicio formInicio)
         {
             InitializeComponent();
+            datosDeProyectos = formInicio.GetDatosDeProyectos();
         }
+
+        //variables de campo
+        private DatosDeProyectos datosDeProyectos;
+
+        //actualiza con datatable el dgv desde DatosDeProyectos
+        public void ActualizardgvProyectos()
+        {
+            dgvProyectos.DataSource = datosDeProyectos.dtProyectos;
+        }
+
+        private void dgvProyectos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        
+
     }
 }

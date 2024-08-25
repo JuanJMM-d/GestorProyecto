@@ -46,30 +46,20 @@
             this.msOrdenarOrden = new System.Windows.Forms.ToolStripComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.grpboxBuscarProyectos = new System.Windows.Forms.GroupBox();
-            this.txtNombreBuscar = new System.Windows.Forms.TextBox();
+            this.btnBuscarProyecto = new System.Windows.Forms.Button();
+            this.DTFechaFinal = new System.Windows.Forms.DateTimePicker();
+            this.DTFechaInicio = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtTEP = new System.Windows.Forms.TextBox();
+            this.comboBoxTEP = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBoxOrdenaEstado = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.textBoxBuscarCategoria = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBoxOrdenaEstado = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBoxTEP = new System.Windows.Forms.ComboBox();
-            this.txtTEP = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.DTFechaInicio = new System.Windows.Forms.DateTimePicker();
-            this.DTFechaFinal = new System.Windows.Forms.DateTimePicker();
-            this.btnBuscarProyecto = new System.Windows.Forms.Button();
+            this.txtNombreBuscar = new System.Windows.Forms.TextBox();
             this.lblProyectoVer = new System.Windows.Forms.Label();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnVerTareas = new System.Windows.Forms.Button();
             this.btnVerEmpleados = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProyectos)).BeginInit();
@@ -88,17 +78,6 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvProyectos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvProyectos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProyectos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column10,
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column7,
-            this.Column8,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column9});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -113,6 +92,7 @@
             this.dgvProyectos.RowTemplate.Height = 35;
             this.dgvProyectos.Size = new System.Drawing.Size(924, 227);
             this.dgvProyectos.TabIndex = 0;
+            this.dgvProyectos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProyectos_CellContentClick);
             // 
             // menuStripProyectos
             // 
@@ -148,68 +128,68 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(221, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(193, 6);
             // 
             // msOrdenarNombre
             // 
             this.msOrdenarNombre.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.msOrdenarNombre.Name = "msOrdenarNombre";
-            this.msOrdenarNombre.Size = new System.Drawing.Size(224, 30);
+            this.msOrdenarNombre.Size = new System.Drawing.Size(196, 30);
             this.msOrdenarNombre.Text = "Nombre";
             // 
             // msOrdenarEstado
             // 
             this.msOrdenarEstado.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.msOrdenarEstado.Name = "msOrdenarEstado";
-            this.msOrdenarEstado.Size = new System.Drawing.Size(224, 30);
+            this.msOrdenarEstado.Size = new System.Drawing.Size(196, 30);
             this.msOrdenarEstado.Text = "Estado";
             // 
             // msOrdenarCategoria
             // 
             this.msOrdenarCategoria.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.msOrdenarCategoria.Name = "msOrdenarCategoria";
-            this.msOrdenarCategoria.Size = new System.Drawing.Size(224, 30);
+            this.msOrdenarCategoria.Size = new System.Drawing.Size(196, 30);
             this.msOrdenarCategoria.Text = "Categoria";
             // 
             // msOrdenarTareas
             // 
             this.msOrdenarTareas.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.msOrdenarTareas.Name = "msOrdenarTareas";
-            this.msOrdenarTareas.Size = new System.Drawing.Size(224, 30);
+            this.msOrdenarTareas.Size = new System.Drawing.Size(196, 30);
             this.msOrdenarTareas.Text = "Tareas";
             // 
             // msOrdenarEmpleados
             // 
             this.msOrdenarEmpleados.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.msOrdenarEmpleados.Name = "msOrdenarEmpleados";
-            this.msOrdenarEmpleados.Size = new System.Drawing.Size(224, 30);
+            this.msOrdenarEmpleados.Size = new System.Drawing.Size(196, 30);
             this.msOrdenarEmpleados.Text = "Empleados";
             // 
             // msOrdenarPresupuesto
             // 
             this.msOrdenarPresupuesto.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.msOrdenarPresupuesto.Name = "msOrdenarPresupuesto";
-            this.msOrdenarPresupuesto.Size = new System.Drawing.Size(224, 30);
+            this.msOrdenarPresupuesto.Size = new System.Drawing.Size(196, 30);
             this.msOrdenarPresupuesto.Text = "Presupuesto";
             // 
             // msOrdenarFechaInicio
             // 
             this.msOrdenarFechaInicio.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.msOrdenarFechaInicio.Name = "msOrdenarFechaInicio";
-            this.msOrdenarFechaInicio.Size = new System.Drawing.Size(224, 30);
+            this.msOrdenarFechaInicio.Size = new System.Drawing.Size(196, 30);
             this.msOrdenarFechaInicio.Text = "Fecha Incio";
             // 
             // msOrdenarFechaFinal
             // 
             this.msOrdenarFechaFinal.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.msOrdenarFechaFinal.Name = "msOrdenarFechaFinal";
-            this.msOrdenarFechaFinal.Size = new System.Drawing.Size(224, 30);
+            this.msOrdenarFechaFinal.Size = new System.Drawing.Size(196, 30);
             this.msOrdenarFechaFinal.Text = "Fecha Final";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(221, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(193, 6);
             // 
             // msOrdenarOrden
             // 
@@ -255,13 +235,112 @@
             this.grpboxBuscarProyectos.TabStop = false;
             this.grpboxBuscarProyectos.Text = "groupBox1";
             // 
-            // txtNombreBuscar
+            // btnBuscarProyecto
             // 
-            this.txtNombreBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreBuscar.Location = new System.Drawing.Point(100, 21);
-            this.txtNombreBuscar.Name = "txtNombreBuscar";
-            this.txtNombreBuscar.Size = new System.Drawing.Size(166, 27);
-            this.txtNombreBuscar.TabIndex = 4;
+            this.btnBuscarProyecto.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnBuscarProyecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarProyecto.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnBuscarProyecto.Location = new System.Drawing.Point(307, 145);
+            this.btnBuscarProyecto.Name = "btnBuscarProyecto";
+            this.btnBuscarProyecto.Size = new System.Drawing.Size(117, 36);
+            this.btnBuscarProyecto.TabIndex = 16;
+            this.btnBuscarProyecto.Text = "Buscar";
+            this.btnBuscarProyecto.UseVisualStyleBackColor = false;
+            // 
+            // DTFechaFinal
+            // 
+            this.DTFechaFinal.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DTFechaFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DTFechaFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DTFechaFinal.Location = new System.Drawing.Point(480, 105);
+            this.DTFechaFinal.Name = "DTFechaFinal";
+            this.DTFechaFinal.Size = new System.Drawing.Size(200, 27);
+            this.DTFechaFinal.TabIndex = 15;
+            // 
+            // DTFechaInicio
+            // 
+            this.DTFechaInicio.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DTFechaInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DTFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DTFechaInicio.Location = new System.Drawing.Point(480, 68);
+            this.DTFechaInicio.Name = "DTFechaInicio";
+            this.DTFechaInicio.Size = new System.Drawing.Size(200, 27);
+            this.DTFechaInicio.TabIndex = 14;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(338, 105);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(134, 22);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Fecha de Final:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(338, 68);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(136, 22);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Fecha de Inicio:";
+            // 
+            // txtTEP
+            // 
+            this.txtTEP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTEP.Location = new System.Drawing.Point(607, 16);
+            this.txtTEP.Name = "txtTEP";
+            this.txtTEP.Size = new System.Drawing.Size(97, 28);
+            this.txtTEP.TabIndex = 11;
+            // 
+            // comboBoxTEP
+            // 
+            this.comboBoxTEP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxTEP.FormattingEnabled = true;
+            this.comboBoxTEP.Items.AddRange(new object[] {
+            "Tareas",
+            "Empleados",
+            "Presupuesto\t\t\t\t"});
+            this.comboBoxTEP.Location = new System.Drawing.Point(446, 16);
+            this.comboBoxTEP.Name = "comboBoxTEP";
+            this.comboBoxTEP.Size = new System.Drawing.Size(155, 28);
+            this.comboBoxTEP.TabIndex = 10;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(338, 21);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(102, 22);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Catidad de:";
+            // 
+            // comboBoxOrdenaEstado
+            // 
+            this.comboBoxOrdenaEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxOrdenaEstado.FormattingEnabled = true;
+            this.comboBoxOrdenaEstado.Items.AddRange(new object[] {
+            "En curso",
+            "Finalizado",
+            "Por empezar",
+            "Pausado"});
+            this.comboBoxOrdenaEstado.Location = new System.Drawing.Point(115, 104);
+            this.comboBoxOrdenaEstado.Name = "comboBoxOrdenaEstado";
+            this.comboBoxOrdenaEstado.Size = new System.Drawing.Size(155, 28);
+            this.comboBoxOrdenaEstado.TabIndex = 8;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(16, 110);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(71, 22);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Estado:";
             // 
             // textBoxBuscarCategoria
             // 
@@ -281,112 +360,13 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Categoria:";
             // 
-            // label3
+            // txtNombreBuscar
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(16, 110);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 22);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Estado:";
-            // 
-            // comboBoxOrdenaEstado
-            // 
-            this.comboBoxOrdenaEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxOrdenaEstado.FormattingEnabled = true;
-            this.comboBoxOrdenaEstado.Items.AddRange(new object[] {
-            "En curso",
-            "Finalizado",
-            "Por empezar",
-            "Pausado"});
-            this.comboBoxOrdenaEstado.Location = new System.Drawing.Point(115, 104);
-            this.comboBoxOrdenaEstado.Name = "comboBoxOrdenaEstado";
-            this.comboBoxOrdenaEstado.Size = new System.Drawing.Size(155, 28);
-            this.comboBoxOrdenaEstado.TabIndex = 8;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(338, 21);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 22);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Catidad de:";
-            // 
-            // comboBoxTEP
-            // 
-            this.comboBoxTEP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxTEP.FormattingEnabled = true;
-            this.comboBoxTEP.Items.AddRange(new object[] {
-            "Tareas",
-            "Empleados",
-            "Presupuesto\t\t\t\t"});
-            this.comboBoxTEP.Location = new System.Drawing.Point(446, 16);
-            this.comboBoxTEP.Name = "comboBoxTEP";
-            this.comboBoxTEP.Size = new System.Drawing.Size(155, 28);
-            this.comboBoxTEP.TabIndex = 10;
-            // 
-            // txtTEP
-            // 
-            this.txtTEP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTEP.Location = new System.Drawing.Point(607, 16);
-            this.txtTEP.Name = "txtTEP";
-            this.txtTEP.Size = new System.Drawing.Size(97, 28);
-            this.txtTEP.TabIndex = 11;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(338, 68);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(136, 22);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Fecha de Inicio:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(338, 105);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(134, 22);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Fecha de Final:";
-            // 
-            // DTFechaInicio
-            // 
-            this.DTFechaInicio.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DTFechaInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DTFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DTFechaInicio.Location = new System.Drawing.Point(480, 68);
-            this.DTFechaInicio.Name = "DTFechaInicio";
-            this.DTFechaInicio.Size = new System.Drawing.Size(200, 27);
-            this.DTFechaInicio.TabIndex = 14;
-            // 
-            // DTFechaFinal
-            // 
-            this.DTFechaFinal.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DTFechaFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DTFechaFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DTFechaFinal.Location = new System.Drawing.Point(480, 105);
-            this.DTFechaFinal.Name = "DTFechaFinal";
-            this.DTFechaFinal.Size = new System.Drawing.Size(200, 27);
-            this.DTFechaFinal.TabIndex = 15;
-            // 
-            // btnBuscarProyecto
-            // 
-            this.btnBuscarProyecto.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnBuscarProyecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarProyecto.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnBuscarProyecto.Location = new System.Drawing.Point(307, 145);
-            this.btnBuscarProyecto.Name = "btnBuscarProyecto";
-            this.btnBuscarProyecto.Size = new System.Drawing.Size(117, 36);
-            this.btnBuscarProyecto.TabIndex = 16;
-            this.btnBuscarProyecto.Text = "Buscar";
-            this.btnBuscarProyecto.UseVisualStyleBackColor = false;
+            this.txtNombreBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreBuscar.Location = new System.Drawing.Point(100, 21);
+            this.txtNombreBuscar.Name = "txtNombreBuscar";
+            this.txtNombreBuscar.Size = new System.Drawing.Size(166, 27);
+            this.txtNombreBuscar.TabIndex = 4;
             // 
             // lblProyectoVer
             // 
@@ -397,76 +377,6 @@
             this.lblProyectoVer.Size = new System.Drawing.Size(273, 29);
             this.lblProyectoVer.TabIndex = 17;
             this.lblProyectoVer.Text = "ID Proyecto:    , Nombre:";
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "ID Proyecto";
-            this.Column10.MinimumWidth = 6;
-            this.Column10.Name = "Column10";
-            this.Column10.Width = 125;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Nombre";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Categoria";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Estado";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Tareas";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 125;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Empleados";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 125;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Presupuesto";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 125;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Fecha Inico";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 125;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Fecha Finalizacion";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 125;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Descripcion";
-            this.Column9.MinimumWidth = 6;
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 125;
             // 
             // btnVerTareas
             // 
@@ -543,16 +453,6 @@
         private System.Windows.Forms.DateTimePicker DTFechaInicio;
         private System.Windows.Forms.Button btnBuscarProyecto;
         private System.Windows.Forms.Label lblProyectoVer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.Button btnVerTareas;
         private System.Windows.Forms.Button btnVerEmpleados;
     }

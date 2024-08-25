@@ -26,7 +26,7 @@ namespace GestorProyectos
         {
             //crear instancias de formularios
             formLogin = new FormLogin(this);   // con this enviamos la instancia actual
-            formInicio = new FormInicio(this);  
+            formInicio = new FormInicio();  
 
 
             //cargar el form login
@@ -57,9 +57,6 @@ namespace GestorProyectos
             formInicio.Show();
 
         }
-
-
-
 
         private void panelPrincipal_Paint(object sender, PaintEventArgs e)
         {

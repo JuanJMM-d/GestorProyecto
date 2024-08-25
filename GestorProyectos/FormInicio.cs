@@ -10,25 +10,91 @@ using System.Windows.Forms;
 
 namespace GestorProyectos
 {
+    
     public partial class FormInicio : Form
     {
 
-        public FormInicio(Form1 form1)
+        public FormInicio()
         {
             InitializeComponent();
-            this.form1 = form1;
+            manejoDeDatos = new ManejoDeDatos();
+            formProyectos = new FormProyectos(this);    
+        }
+
+        //variables globales
+        private ManejoDeDatos manejoDeDatos;
+        FormProyectos formProyectos;
+
+        //metodo que gestiona el acceso a la misma instancia de DatosDeProyectos
+        internal DatosDeProyectos GetDatosDeProyectos()
+        {
+            return manejoDeDatos.GetDatosDeProyectos();
+        }
+
+
+        //metodo para mostra formularios en el panel   panelMenuSeleccionado
+        private void MostrarEnElPanel(Form formulario, Panel panel)
+        {
+            panel.Controls.Clear();   //liberamos el panel del FormLogin
+            formulario.TopLevel = false;
+            formulario.FormBorderStyle = FormBorderStyle.None;
+            formulario.Dock = DockStyle.Fill;        // configuramos para que llene todo el Panel
+            panel.Controls.Add(formulario);   //Agregamos los controles del FormLogin
+            formulario.Show();
+        }
+
+        private void btnCrearProycto_Click(object sender, EventArgs e)
+        {
+            // Pasar FormInicio y la instancia existente de FormProyectos al constructor de FormCrearProyecto
+            FormCrearProyecto formCrearProyecto = new FormCrearProyecto(this, formProyectos);
+            MostrarEnElPanel(formCrearProyecto, panelMenuSeleccionado);
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            FormHome formHome = new FormHome(this);
+            MostrarEnElPanel(formHome, panelMenuSeleccionado);
+        }
+
+        private void btnProyectosLista_Click(object sender, EventArgs e)
+        {
+            
+            MostrarEnElPanel(formProyectos, panelMenuSeleccionado);
+        }
+
+
+        //Metodos que ejecutan btns desde el FormHome para el FormInico
+        public void ejecutarBtnProyectos()
+        {
+            btnProyectosLista.PerformClick();
         }
 
         private void FormInicio_Load(object sender, EventArgs e)
         {
+
         }
-
-        //variables globales
-        Form1 form1;
-
         private void panelMenuSeleccionado_Paint(object sender, PaintEventArgs e)
         {
 
         }
+
+        
+
     }
+
+    internal class ManejoDeDatos
+    {
+        private DatosDeProyectos datosDeProyectos;
+
+        public ManejoDeDatos()
+        {
+            datosDeProyectos = new DatosDeProyectos();
+        }
+
+        public DatosDeProyectos GetDatosDeProyectos()
+        {
+            return datosDeProyectos;
+        }
+    }
+
 }

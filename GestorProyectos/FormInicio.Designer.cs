@@ -72,6 +72,7 @@
             this.btnProyectosLista.TabIndex = 6;
             this.btnProyectosLista.Text = " 📂 Proyectos";
             this.btnProyectosLista.UseVisualStyleBackColor = true;
+            this.btnProyectosLista.Click += new System.EventHandler(this.btnProyectosLista_Click);
             // 
             // btnMenuGraficos
             // 
@@ -113,6 +114,7 @@
             this.btnCrearProycto.Text = "➕ Crear Proyecto";
             this.btnCrearProycto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCrearProycto.UseVisualStyleBackColor = true;
+            this.btnCrearProycto.Click += new System.EventHandler(this.btnCrearProycto_Click);
             // 
             // btnHome
             // 
@@ -123,6 +125,7 @@
             this.btnHome.TabIndex = 1;
             this.btnHome.Text = "🏠 Home";
             this.btnHome.UseVisualStyleBackColor = true;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // panelPerfil
             // 

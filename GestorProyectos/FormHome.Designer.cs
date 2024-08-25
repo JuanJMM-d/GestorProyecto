@@ -32,7 +32,7 @@
             this.btnHomeLinkBuzon = new System.Windows.Forms.Button();
             this.btnHomeLinkEmpleados = new System.Windows.Forms.Button();
             this.btnHomeLinkProyectos = new System.Windows.Forms.Button();
-            this.lbl = new System.Windows.Forms.Label();
+            this.lblFechaHome = new System.Windows.Forms.Label();
             this.lblHoraHome = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -45,6 +45,7 @@
             this.btnHomeLinkGraficos.TabIndex = 12;
             this.btnHomeLinkGraficos.Text = "Tu \r\nseguimiento\r\n📊";
             this.btnHomeLinkGraficos.UseVisualStyleBackColor = true;
+            this.btnHomeLinkGraficos.Click += new System.EventHandler(this.btnHomeLinkGraficos_Click);
             // 
             // btnHomeLinkBuzon
             // 
@@ -55,6 +56,7 @@
             this.btnHomeLinkBuzon.TabIndex = 11;
             this.btnHomeLinkBuzon.Text = "Tus \r\nnotificaciones\r\n(Buzon)";
             this.btnHomeLinkBuzon.UseVisualStyleBackColor = true;
+            this.btnHomeLinkBuzon.Click += new System.EventHandler(this.btnHomeLinkBuzon_Click);
             // 
             // btnHomeLinkEmpleados
             // 
@@ -65,6 +67,7 @@
             this.btnHomeLinkEmpleados.TabIndex = 10;
             this.btnHomeLinkEmpleados.Text = "Tus \r\ncolaboradores\r\n";
             this.btnHomeLinkEmpleados.UseVisualStyleBackColor = true;
+            this.btnHomeLinkEmpleados.Click += new System.EventHandler(this.btnHomeLinkEmpleados_Click);
             // 
             // btnHomeLinkProyectos
             // 
@@ -75,17 +78,19 @@
             this.btnHomeLinkProyectos.TabIndex = 9;
             this.btnHomeLinkProyectos.Text = "Tus \r\nproyectos";
             this.btnHomeLinkProyectos.UseVisualStyleBackColor = true;
+            this.btnHomeLinkProyectos.Click += new System.EventHandler(this.btnHomeLinkProyectos_Click);
             // 
-            // lbl
+            // lblFechaHome
             // 
-            this.lbl.AutoSize = true;
-            this.lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl.Location = new System.Drawing.Point(410, 100);
-            this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(108, 29);
-            this.lbl.TabIndex = 8;
-            this.lbl.Text = "fecaha....";
-            this.lbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblFechaHome.AutoSize = true;
+            this.lblFechaHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaHome.Location = new System.Drawing.Point(410, 100);
+            this.lblFechaHome.Name = "lblFechaHome";
+            this.lblFechaHome.Size = new System.Drawing.Size(108, 29);
+            this.lblFechaHome.TabIndex = 8;
+            this.lblFechaHome.Text = "fecaha....";
+            this.lblFechaHome.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblFechaHome.Click += new System.EventHandler(this.lblFechaHome_Click);
             // 
             // lblHoraHome
             // 
@@ -96,6 +101,7 @@
             this.lblHoraHome.Size = new System.Drawing.Size(152, 46);
             this.lblHoraHome.TabIndex = 7;
             this.lblHoraHome.Text = "hora....";
+            this.lblHoraHome.Click += new System.EventHandler(this.lblHoraHome_Click);
             // 
             // FormHome
             // 
@@ -106,7 +112,7 @@
             this.Controls.Add(this.btnHomeLinkBuzon);
             this.Controls.Add(this.btnHomeLinkEmpleados);
             this.Controls.Add(this.btnHomeLinkProyectos);
-            this.Controls.Add(this.lbl);
+            this.Controls.Add(this.lblFechaHome);
             this.Controls.Add(this.lblHoraHome);
             this.Name = "FormHome";
             this.Text = "FormHome";
@@ -122,7 +128,7 @@
         private System.Windows.Forms.Button btnHomeLinkBuzon;
         private System.Windows.Forms.Button btnHomeLinkEmpleados;
         private System.Windows.Forms.Button btnHomeLinkProyectos;
-        private System.Windows.Forms.Label lbl;
+        private System.Windows.Forms.Label lblFechaHome;
         private System.Windows.Forms.Label lblHoraHome;
     }
 }

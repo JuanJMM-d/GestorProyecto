@@ -10,20 +10,36 @@ namespace GestorProyectos
     internal class DatosDeProyectos
     {
         //constructor para la clase DatosDeProyectos
-        public DatosDeProyectos(FormCrearProyecto formCrearProyecto)
+        public DatosDeProyectos()
         {
             dtProyectos = new DataTable();
             dtProyectosAddColumnas();
-            this.formCrearProyecto = formCrearProyecto;
+
+            dtTareas = new DataTable();
+            dtTareasAddColumas();
+
+            dtEmpleados = new DataTable();
+            dtEmpleadosAddCoolumnas();
         }
 
-        //Variables globales
-        public static DataTable dtProyectos;
-        public static DataTable dtTareas;
-        public static DataTable dtEmpleados;
+        
+        public DataTable dtProyectos;
+        public  DataTable dtTareas;
+        public  DataTable dtEmpleados;
 
-        FormCrearProyecto formCrearProyecto;
 
+        //Metodo para crear campos en el dtProyectos
+        private void dtProyectosAddColumnas()
+        {
+            dtProyectos.Columns.Add("ID", typeof(string));
+            dtProyectos.Columns.Add("Nombre", typeof(string));
+            dtProyectos.Columns.Add("Categoria", typeof(string));
+            dtProyectos.Columns.Add("Estado", typeof(string));
+            dtProyectos.Columns.Add("Presupuesto", typeof(double));
+            dtProyectos.Columns.Add("Fecha_Inicio", typeof(string));
+            dtProyectos.Columns.Add("Fecha_Final", typeof(string));
+            dtProyectos.Columns.Add("Descripcion", typeof(string));
+        }
 
         //crear campos en dtTareas
         private void dtTareasAddColumas()
@@ -43,26 +59,6 @@ namespace GestorProyectos
             dtEmpleados.Columns.Add("Rol", typeof(string));
 
         }
-
-
-
-
-        //Metodo para crear campos en el dtProyectos
-        private void dtProyectosAddColumnas()
-        {
-            dtProyectos.Columns.Add("ID", typeof(string));
-            dtProyectos.Columns.Add("Nombre", typeof(string));
-            dtProyectos.Columns.Add("Categoria", typeof(string));
-            dtProyectos.Columns.Add("Estado", typeof(string));
-            dtProyectos.Columns.Add("Presupuesto", typeof(double));
-            dtProyectos.Columns.Add("Fecha_Inicio", typeof(string));
-            dtProyectos.Columns.Add("Fecha_Final", typeof(string));
-            dtProyectos.Columns.Add("Descrripcion", typeof(string));
-        }
-           
-
-
-
 
     }
 }

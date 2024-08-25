@@ -15,13 +15,17 @@ namespace GestorProyectos
 {
     public partial class FormCrearTarea : Form
     {
-        public FormCrearTarea()
+        private DatosDeProyectos datosDeProyectos;
+
+        public FormCrearTarea(FormInicio datosDeProyectos)
         {
             InitializeComponent();
+            this.datosDeProyectos = datosDeProyectos.GetDatosDeProyectos();
+            lblNombrePoryecto.Text = FormCrearProyecto.NombrePoryectoActual; // NombreProyectoActual corregido
             grpEmpleados.Enabled = false;
             btnAddTarea.Enabled = false;
-
         }
+
 
         //variables globales
         private ErrorProvider errorProvider;
@@ -29,57 +33,59 @@ namespace GestorProyectos
         private int contTarea = 0;
         private string IdProyectoTarea = "";
 
-
-
         private void btnAddTarea_Click(object sender, EventArgs e)
         {
             if (ValidarTarea())
             {
                 contTarea++;
-
                 IdProyectoTarea = contTarea.ToString() + FormCrearProyecto.IDProyectoActual;
-                string tNombe = txtNombreTarea.Text;
+                string tNombre = txtNombreTarea.Text;
                 string tEstado = comboBoxTareaEstado.SelectedItem.ToString();
                 string tDescripcion = txtDescripcionTarea.Text;
 
-                DatosDeProyectos.dtTareas.Rows.Add(IdProyectoTarea, tNombe, tEstado, tDescripcion);
+                datosDeProyectos.dtTareas.Rows.Add(IdProyectoTarea, tNombre, tEstado, tDescripcion);
                 grpEmpleados.Enabled = true;
                 toolTipAyuda.Hide(grpEmpleados);
             }
-
-
         }
 
         private bool ValidarTarea()
         {
-            
-                bool datosOk = true;
-                Regex nombreCatValidar = new Regex(@"^[a-zA-Z0-9\s-]+$");
+            bool datosOk = true;
+            Regex nombreCatValidar = new Regex(@"^[a-zA-Z0-9\s-]+$");
 
-                //validar nombre
-                if (string.IsNullOrEmpty(txtNombreTarea.Text))
-                {
-                    errorProvider.SetError(txtNombreTarea, "El campo no puede estar vacio");
-                    datosOk = false;
-                }
-                else if (nombreCatValidar.IsMatch(txtNombreTarea.Text))
-                {
-                    errorProvider.SetError(txtNombreTarea, string.Empty);
-                }
-                else errorProvider.SetError(txtNombreTarea, "Entrada no valida"); datosOk = false;
+            //validar nombre
+            if (string.IsNullOrEmpty(txtNombreTarea.Text))
+            {
+                errorProvider.SetError(txtNombreTarea, "El campo no puede estar vacío");
+                datosOk = false;
+            }
+            else if (nombreCatValidar.IsMatch(txtNombreTarea.Text))
+            {
+                errorProvider.SetError(txtNombreTarea, string.Empty);
+            }
+            else
+            {
+                errorProvider.SetError(txtNombreTarea, "Entrada no válida");
+                datosOk = false;
+            }
 
-                //validar stado
-                if (string.IsNullOrEmpty(comboBoxTareaEstado.SelectedItem.ToString()))
-                {
-                    errorProvider.SetError(comboBoxTareaEstado, "El campo no puede estar vacio");
-                    datosOk = false;
-                }
-                else if (nombreCatValidar.IsMatch(comboBoxTareaEstado.SelectedItem.ToString()))
-                {
-                    errorProvider.SetError(comboBoxTareaEstado, string.Empty);
-                }
-                else errorProvider.SetError(comboBoxTareaEstado, "Entrada no valida"); datosOk = false;
-         
+            //validar estado
+            if (comboBoxTareaEstado.SelectedItem == null || string.IsNullOrEmpty(comboBoxTareaEstado.SelectedItem.ToString()))
+            {
+                errorProvider.SetError(comboBoxTareaEstado, "El campo no puede estar vacío");
+                datosOk = false;
+            }
+            else if (nombreCatValidar.IsMatch(comboBoxTareaEstado.SelectedItem.ToString()))
+            {
+                errorProvider.SetError(comboBoxTareaEstado, string.Empty);
+            }
+            else
+            {
+                errorProvider.SetError(comboBoxTareaEstado, "Entrada no válida");
+                datosOk = false;
+            }
+
             return datosOk;
         }
 
@@ -129,20 +135,16 @@ namespace GestorProyectos
             {
                 string idEmpleado = txtIdEmpleado.Text;
                 string nombreEmpleado = txtEmpleadoNombre.Text;
-                //IdProyectoTarea
+                // Usa el campo de instancia 'IdProyectoTarea'
                 string rolEmpleado = txtRolEmpleado.Text;
 
-                DatosDeProyectos.dtEmpleados.Rows.Add(idEmpleado, nombreEmpleado, IdProyectoTarea, 
-                    rolEmpleado);
+                // Asegúrate de usar la instancia correcta de 'DatosDeProyectos'
+                datosDeProyectos.dtEmpleados.Rows.Add(idEmpleado, nombreEmpleado, IdProyectoTarea, rolEmpleado);
 
                 btnNuevaTarea.Enabled = true;
-
             }
-            
-        
-
-
         }
+
 
         private bool ValidarEmpleado()
         {
@@ -192,6 +194,11 @@ namespace GestorProyectos
         }
 
         private void btnNuevaTarea_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblNombrePoryecto_Click(object sender, EventArgs e)
         {
 
         }
