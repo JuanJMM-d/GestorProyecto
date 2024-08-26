@@ -121,7 +121,7 @@
             this.Controls.Add(this.txtPassword);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormLogin";
-            this.Text = "FormLogin";
+            this.Text = "Inicio de Sesión";
             this.Load += new System.EventHandler(this.FormLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUser)).EndInit();

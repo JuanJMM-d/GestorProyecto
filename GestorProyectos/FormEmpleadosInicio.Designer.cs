@@ -237,7 +237,7 @@
             this.Controls.Add(this.dgvEmpleados);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormEmpleadosInicio";
-            this.Text = "FormEmpleadosInicio";
+            this.Text = "Inicio (Empleado)";
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
             this.grpboxBuscarProyectos.ResumeLayout(false);
             this.grpboxBuscarProyectos.PerformLayout();

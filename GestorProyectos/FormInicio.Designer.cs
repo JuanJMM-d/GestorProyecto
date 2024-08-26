@@ -209,7 +209,7 @@
             this.Controls.Add(this.panelMenuIzq);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormInicio";
-            this.Text = "ForrmInicio";
+            this.Text = "Inicio (Administrador)";
             this.Load += new System.EventHandler(this.FormInicio_Load);
             this.panelMenuIzq.ResumeLayout(false);
             this.panelPerfil.ResumeLayout(false);

@@ -148,7 +148,7 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormCrearEmpleado";
-            this.Text = "FormCrearEmpleado";
+            this.Text = "Crear Empleado";
             this.Load += new System.EventHandler(this.FormCrearEmpleado_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
