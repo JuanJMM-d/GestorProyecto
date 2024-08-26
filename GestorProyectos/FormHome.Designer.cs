@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnHomeLinkGraficos = new System.Windows.Forms.Button();
             this.btnHomeLinkBuzon = new System.Windows.Forms.Button();
             this.btnHomeLinkEmpleados = new System.Windows.Forms.Button();
             this.btnHomeLinkProyectos = new System.Windows.Forms.Button();
             this.lblFechaHome = new System.Windows.Forms.Label();
             this.lblHoraHome = new System.Windows.Forms.Label();
+            this.timerHome = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // btnHomeLinkGraficos
@@ -83,25 +85,31 @@
             // lblFechaHome
             // 
             this.lblFechaHome.AutoSize = true;
+            this.lblFechaHome.BackColor = System.Drawing.Color.GreenYellow;
             this.lblFechaHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFechaHome.Location = new System.Drawing.Point(410, 100);
             this.lblFechaHome.Name = "lblFechaHome";
-            this.lblFechaHome.Size = new System.Drawing.Size(108, 29);
+            this.lblFechaHome.Size = new System.Drawing.Size(19, 29);
             this.lblFechaHome.TabIndex = 8;
-            this.lblFechaHome.Text = "fecaha....";
+            this.lblFechaHome.Text = " ";
             this.lblFechaHome.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.lblFechaHome.Click += new System.EventHandler(this.lblFechaHome_Click);
             // 
             // lblHoraHome
             // 
             this.lblHoraHome.AutoSize = true;
+            this.lblHoraHome.BackColor = System.Drawing.Color.GreenYellow;
             this.lblHoraHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHoraHome.Location = new System.Drawing.Point(407, 42);
             this.lblHoraHome.Name = "lblHoraHome";
-            this.lblHoraHome.Size = new System.Drawing.Size(152, 46);
+            this.lblHoraHome.Size = new System.Drawing.Size(32, 46);
             this.lblHoraHome.TabIndex = 7;
-            this.lblHoraHome.Text = "hora....";
+            this.lblHoraHome.Text = " ";
             this.lblHoraHome.Click += new System.EventHandler(this.lblHoraHome_Click);
+            // 
+            // timerHome
+            // 
+            this.timerHome.Tick += new System.EventHandler(this.timerHome_Tick);
             // 
             // FormHome
             // 
@@ -130,5 +138,6 @@
         private System.Windows.Forms.Button btnHomeLinkProyectos;
         private System.Windows.Forms.Label lblFechaHome;
         private System.Windows.Forms.Label lblHoraHome;
+        private System.Windows.Forms.Timer timerHome;
     }
 }

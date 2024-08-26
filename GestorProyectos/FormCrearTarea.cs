@@ -10,20 +10,24 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ScrollBar;
 
 namespace GestorProyectos
 {
     public partial class FormCrearTarea : Form
     {
         private DatosDeProyectos datosDeProyectos;
+        private FormEmpleadosInicio formEmpleadosInicio;
 
-        public FormCrearTarea(FormInicio datosDeProyectos)
+        public FormCrearTarea(FormInicio formInicio)
         {
             InitializeComponent();
-            this.datosDeProyectos = datosDeProyectos.GetDatosDeProyectos();
+            this.datosDeProyectos = formInicio.GetDatosDeProyectos();
             lblNombrePoryecto.Text = FormCrearProyecto.NombrePoryectoActual; // NombreProyectoActual corregido
             grpEmpleados.Enabled = false;
-            btnAddTarea.Enabled = false;
+              btnNuevaTarea.Enabled = false; btnAddTarea.Enabled = true;
+            formEmpleadosInicio = new FormEmpleadosInicio(formInicio);
+            errorProvider = new ErrorProvider();
         }
 
 
@@ -38,14 +42,20 @@ namespace GestorProyectos
             if (ValidarTarea())
             {
                 contTarea++;
-                IdProyectoTarea = contTarea.ToString() + FormCrearProyecto.IDProyectoActual;
+                IdProyectoTarea = txtNombreTarea.Text + datosDeProyectos.generarIDProyectoTarea();
                 string tNombre = txtNombreTarea.Text;
                 string tEstado = comboBoxTareaEstado.SelectedItem.ToString();
                 string tDescripcion = txtDescripcionTarea.Text;
+                string IDProyecto = FormCrearProyecto.IDProyectoActual;
 
-                datosDeProyectos.dtTareas.Rows.Add(IdProyectoTarea, tNombre, tEstado, tDescripcion);
+                datosDeProyectos.dtTareas.Rows.Add(IdProyectoTarea, tNombre, tEstado, IDProyecto, tDescripcion);
+
                 grpEmpleados.Enabled = true;
+                lblAddEmpleadoTarea.Text = $"Add Empleados a Tarea: {tNombre}";
                 toolTipAyuda.Hide(grpEmpleados);
+
+                datosDeProyectos.actualizarCantidadTareasYEmpleados();
+
             }
         }
 
@@ -89,6 +99,109 @@ namespace GestorProyectos
             return datosOk;
         }
 
+        private void AddEmpleado_Click(object sender, EventArgs e)
+        {
+            if (ValidarEmpleado())
+            {
+                string idEmpleado = txtIdEmpleado.Text;
+                string nombreEmpleado = txtEmpleadoNombre.Text;
+                string rolEmpleado = txtRolEmpleado.Text;
+                string Esalario = txtEmpleadoSalario.Text;
+
+                datosDeProyectos.dtEmpleados.Rows.Add(idEmpleado, nombreEmpleado, rolEmpleado, Esalario);
+
+                string IdAsignacion = datosDeProyectos.generarIDAsignacion();
+
+                datosDeProyectos.dtAsignaciones.Rows.Add(IdAsignacion, idEmpleado, IdProyectoTarea);
+
+                datosDeProyectos.actualizarCantidadTareasYEmpleados();
+                formEmpleadosInicio.ActualizardgvEmpleados();
+
+                btnNuevaTarea.Enabled = true;
+            }
+        }
+
+
+        private bool ValidarEmpleado()
+        {
+            bool datosOk = true;
+            Regex idEmpleado = new Regex(@"^[a-zA-Z0-9]+$");
+            Regex nombreEm = new Regex(@"^[a-zA-Z\s]+$");
+
+            if (string.IsNullOrEmpty(txtIdEmpleado.Text))
+            {
+                errorProvider.SetError(txtIdEmpleado, "El campo no puede estar vacío");
+                datosOk = false;
+            }
+            else if (idEmpleado.IsMatch(txtIdEmpleado.Text.Trim()))
+            {
+                errorProvider.SetError(txtIdEmpleado, string.Empty);
+            }
+            else
+            {
+                errorProvider.SetError(txtIdEmpleado, "Entrada no válida");
+                datosOk = false;
+            }
+
+            if (string.IsNullOrEmpty(txtEmpleadoNombre.Text))
+            {
+                errorProvider.SetError(txtEmpleadoNombre, "El campo no puede estar vacío");
+                datosOk = false;
+            }
+            else if (nombreEm.IsMatch(txtEmpleadoNombre.Text.Trim()))
+            {
+                errorProvider.SetError(txtEmpleadoNombre, string.Empty);
+            }
+            else
+            {
+                errorProvider.SetError(txtEmpleadoNombre, "Entrada no válida");
+                datosOk = false;
+            }
+
+            // Validar el campo de salario
+            if (string.IsNullOrEmpty(txtEmpleadoSalario.Text))
+            {
+                errorProvider.SetError(txtEmpleadoSalario, "El campo no puede estar vacío");
+                datosOk = false;
+            }
+            else
+            {
+                if (decimal.TryParse(txtEmpleadoSalario.Text.Trim(), out decimal salario) && salario > 0)
+                {
+                    errorProvider.SetError(txtEmpleadoSalario, string.Empty);
+                }
+                else
+                {
+                    errorProvider.SetError(txtEmpleadoSalario, "Entrada no válida. Debe ser un número positivo.");
+                    datosOk = false;
+                }
+            }
+            return datosOk;
+        }
+
+
+        private void btnCrearTareaOk_Click(object sender, EventArgs e)
+        {
+            // Verificar si hay tareas creadas y al menos un empleado asignado
+            if (contTarea > 0 && datosDeProyectos.dtAsignaciones.Select($"IDProyectoTarea = '{IdProyectoTarea}'").Length > 0)
+            {
+                mensajeMostrado = false;
+                contTarea = 0;
+                IdProyectoTarea = "";
+
+                this.Close();
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("No agregaste un empleado ni una tarea. Salir de todas formas?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
+                {
+                    this.Close();
+                }
+            }
+        }
+
         private void grpEmpleados_MouseHover(object sender, EventArgs e)
         {
         }
@@ -129,55 +242,7 @@ namespace GestorProyectos
 
         }
 
-        private void AddEmpleado_Click(object sender, EventArgs e)
-        {
-            if (ValidarEmpleado())
-            {
-                string idEmpleado = txtIdEmpleado.Text;
-                string nombreEmpleado = txtEmpleadoNombre.Text;
-                // Usa el campo de instancia 'IdProyectoTarea'
-                string rolEmpleado = txtRolEmpleado.Text;
-
-                // Asegúrate de usar la instancia correcta de 'DatosDeProyectos'
-                datosDeProyectos.dtEmpleados.Rows.Add(idEmpleado, nombreEmpleado, IdProyectoTarea, rolEmpleado);
-
-                btnNuevaTarea.Enabled = true;
-            }
-        }
-
-
-        private bool ValidarEmpleado()
-        {
-            bool datosOk = true;
-            Regex idEmpleado = new Regex(@"^[a-zA-Z0-9]+$");
-            Regex nombreEm = new Regex(@"^[a-zA-Z\s]+$");
-
-            if (string.IsNullOrEmpty(txtIdEmpleado.Text))
-            {
-                errorProvider.SetError(txtIdEmpleado, "El campo no puede estar vacio");
-                datosOk = false;
-            }
-            else if (idEmpleado.IsMatch(txtIdEmpleado.Text.Trim()))
-            {
-                errorProvider.SetError(txtIdEmpleado, string.Empty);
-            }
-            else errorProvider.SetError(txtIdEmpleado, "Entrada no valida"); datosOk = false;
-
-            //verificar Nombre empleado
-            if (string.IsNullOrEmpty(txtEmpleadoNombre.Text))
-            {
-                errorProvider.SetError(txtIdEmpleado, "El campo no puede estar vacio");
-                datosOk = false;
-            }
-            else if (nombreEm.IsMatch(txtEmpleadoNombre.Text.Trim()))
-            {
-                errorProvider.SetError(txtIdEmpleado, string.Empty);
-            }
-            else errorProvider.SetError(txtIdEmpleado, "Entrada no valida"); datosOk = false;
-
-            return datosOk;
-        }
-
+        
         private void txtIdEmpleado_TextChanged(object sender, EventArgs e)
         {
 
@@ -199,6 +264,16 @@ namespace GestorProyectos
         }
 
         private void lblNombrePoryecto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblAddEmpleadoTarea_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEmpleadoSalario_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -12,9 +12,34 @@ namespace GestorProyectos
 {
     public partial class FormEmpleadosInicio : Form
     {
-        public FormEmpleadosInicio()
+        public FormEmpleadosInicio(FormInicio formInicio)
         {
             InitializeComponent();
+            datosDeProyectos = formInicio.GetDatosDeProyectos();
+            ActualizardgvEmpleados();
+        }
+       
+        //variables globales
+        DatosDeProyectos datosDeProyectos;
+
+        public void ActualizardgvEmpleados()
+        {
+            dgvEmpleados.DataSource = datosDeProyectos.dtEmpleados;
+        }
+
+        private void dgvEmpleados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtPTRmin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormEmpleadosInicio_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

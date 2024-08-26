@@ -20,25 +20,31 @@ namespace GestorProyectos
 
             dtEmpleados = new DataTable();
             dtEmpleadosAddCoolumnas();
+
+            dtAsignaciones = new DataTable();
+            dtAsinacionesAddColumnas();
+            actualizarCantidadTareasYEmpleados();
         }
 
         
         public DataTable dtProyectos;
         public  DataTable dtTareas;
         public  DataTable dtEmpleados;
-
+        public DataTable dtAsignaciones;
 
         //Metodo para crear campos en el dtProyectos
         private void dtProyectosAddColumnas()
         {
-            dtProyectos.Columns.Add("ID", typeof(string));
+            dtProyectos.Columns.Add("IDProyecto", typeof(string));
             dtProyectos.Columns.Add("Nombre", typeof(string));
             dtProyectos.Columns.Add("Categoria", typeof(string));
             dtProyectos.Columns.Add("Estado", typeof(string));
             dtProyectos.Columns.Add("Presupuesto", typeof(double));
-            dtProyectos.Columns.Add("Fecha_Inicio", typeof(string));
-            dtProyectos.Columns.Add("Fecha_Final", typeof(string));
+            dtProyectos.Columns.Add("Fecha_Inicio", typeof(DateTime));
+            dtProyectos.Columns.Add("Fecha_Final", typeof(DateTime));
             dtProyectos.Columns.Add("Descripcion", typeof(string));
+            dtProyectos.Columns.Add("Catidadad_Tareas", typeof(int));
+            dtProyectos.Columns.Add("Empleados", typeof(int));
         }
 
         //crear campos en dtTareas
@@ -47,6 +53,15 @@ namespace GestorProyectos
             dtTareas.Columns.Add("IDProyectoTarea", typeof(string));
             dtTareas.Columns.Add("Nombre", typeof(string));
             dtTareas.Columns.Add("Estado", typeof(string));
+            dtTareas.Columns.Add("IDProyecto", typeof(string));
+            dtTareas.Columns.Add("DescripcionT", typeof(string));    
+        }
+
+        private void dtAsinacionesAddColumnas()
+        {
+            dtAsignaciones.Columns.Add("idAsignacion", typeof(string));
+            dtAsignaciones.Columns.Add("IdEmpleado", typeof(string));
+            dtAsignaciones.Columns.Add("IDProyectoTarea", typeof(string));
 
         }
 
@@ -55,10 +70,83 @@ namespace GestorProyectos
         {
             dtEmpleados.Columns.Add("IdEmpleado", typeof(string));
             dtEmpleados.Columns.Add("Nombre", typeof(string));
-            dtEmpleados.Columns.Add("IdTarea", typeof(string));
             dtEmpleados.Columns.Add("Rol", typeof(string));
+            dtEmpleados.Columns.Add("Salario", typeof(string));
 
         }
+
+
+
+        public void actualizarCantidadTareasYEmpleados()
+        {
+            foreach (DataRow proyectoRow in dtProyectos.Rows)
+            {
+                string idProyecto = proyectoRow["IDProyecto"].ToString();
+
+                int cantidadTareas = dtTareas.AsEnumerable()
+                                             .Count(row => row["IDProyecto"].ToString() == idProyecto);
+
+                var idsTareas = dtTareas.AsEnumerable().Where(row => row["IDProyecto"].ToString() == idProyecto)
+                                        .Select(row => row["IDProyectoTarea"].ToString());
+
+                int cantidadEmpleados = dtAsignaciones.AsEnumerable().Where(row => idsTareas.Contains(row["IDProyectoTarea"].ToString()))
+                                                      .Select(row => row["IdEmpleado"].ToString()).Distinct().Count();
+
+
+                proyectoRow["Catidadad_Tareas"] = cantidadTareas;
+                proyectoRow["Empleados"] = cantidadEmpleados;
+            }
+        }
+
+
+
+
+
+        // crear ID del Proyecto
+        public string generarIDProyecto()
+        {
+            return generarID("PYT-", dtProyectos, "IDProyecto");
+        }
+
+        // generar IDProyectoTarea
+        public string generarIDProyectoTarea()
+        {
+            return generarID("T", dtTareas, "IDProyectoTarea");
+        }
+
+        //generar IDAsignacion
+        public string generarIDAsignacion()
+        {
+            return generarID("ASGN-", dtAsignaciones, "idAsignacion");
+        }
+
+        //genara el IdPara todos
+        private string generarID(string prefijo, DataTable tabla, string columnaID)
+        {
+            Random random = new Random();
+            string nuevoID;
+
+            do
+            {
+                int numero = random.Next(100, 1000); 
+                nuevoID = $"{prefijo}{numero:D3}";
+
+            } while (IDYaExiste(nuevoID, tabla, columnaID));
+
+            return nuevoID;
+        }
+
+        // Verificar si  ID ya existe
+        private bool IDYaExiste(string id, DataTable tabla, string columnaID)
+        {
+            DataRow[] filasExistentes = tabla.Select($"{columnaID} = '{id}'");
+
+            return filasExistentes.Length > 0;
+        }
+
+
+
+
 
     }
 }

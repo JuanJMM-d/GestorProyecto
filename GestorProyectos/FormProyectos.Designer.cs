@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvProyectos = new System.Windows.Forms.DataGridView();
             this.menuStripProyectos = new System.Windows.Forms.MenuStrip();
             this.menuStripOrdenar = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,12 +46,14 @@
             this.msOrdenarOrden = new System.Windows.Forms.ToolStripComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.grpboxBuscarProyectos = new System.Windows.Forms.GroupBox();
+            this.txtTEPmax = new System.Windows.Forms.TextBox();
+            this.btnLimpiarFiltros = new System.Windows.Forms.Button();
             this.btnBuscarProyecto = new System.Windows.Forms.Button();
             this.DTFechaFinal = new System.Windows.Forms.DateTimePicker();
             this.DTFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtTEP = new System.Windows.Forms.TextBox();
+            this.txtTEPmin = new System.Windows.Forms.TextBox();
             this.comboBoxTEP = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBoxOrdenaEstado = new System.Windows.Forms.ComboBox();
@@ -69,23 +71,23 @@
             // 
             // dgvProyectos
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProyectos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProyectos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvProyectos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProyectos.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProyectos.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvProyectos.Location = new System.Drawing.Point(12, 217);
             this.dgvProyectos.Name = "dgvProyectos";
             this.dgvProyectos.RowHeadersWidth = 51;
@@ -214,12 +216,14 @@
             // 
             // grpboxBuscarProyectos
             // 
+            this.grpboxBuscarProyectos.Controls.Add(this.txtTEPmax);
+            this.grpboxBuscarProyectos.Controls.Add(this.btnLimpiarFiltros);
             this.grpboxBuscarProyectos.Controls.Add(this.btnBuscarProyecto);
             this.grpboxBuscarProyectos.Controls.Add(this.DTFechaFinal);
             this.grpboxBuscarProyectos.Controls.Add(this.DTFechaInicio);
             this.grpboxBuscarProyectos.Controls.Add(this.label6);
             this.grpboxBuscarProyectos.Controls.Add(this.label5);
-            this.grpboxBuscarProyectos.Controls.Add(this.txtTEP);
+            this.grpboxBuscarProyectos.Controls.Add(this.txtTEPmin);
             this.grpboxBuscarProyectos.Controls.Add(this.comboBoxTEP);
             this.grpboxBuscarProyectos.Controls.Add(this.label4);
             this.grpboxBuscarProyectos.Controls.Add(this.comboBoxOrdenaEstado);
@@ -235,6 +239,28 @@
             this.grpboxBuscarProyectos.TabStop = false;
             this.grpboxBuscarProyectos.Text = "groupBox1";
             // 
+            // txtTEPmax
+            // 
+            this.txtTEPmax.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTEPmax.Location = new System.Drawing.Point(710, 18);
+            this.txtTEPmax.Name = "txtTEPmax";
+            this.txtTEPmax.Size = new System.Drawing.Size(97, 28);
+            this.txtTEPmax.TabIndex = 18;
+            this.txtTEPmax.TextChanged += new System.EventHandler(this.txtTEPmax_TextChanged);
+            // 
+            // btnLimpiarFiltros
+            // 
+            this.btnLimpiarFiltros.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnLimpiarFiltros.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiarFiltros.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnLimpiarFiltros.Location = new System.Drawing.Point(671, 145);
+            this.btnLimpiarFiltros.Name = "btnLimpiarFiltros";
+            this.btnLimpiarFiltros.Size = new System.Drawing.Size(117, 36);
+            this.btnLimpiarFiltros.TabIndex = 17;
+            this.btnLimpiarFiltros.Text = "Limpiar";
+            this.btnLimpiarFiltros.UseVisualStyleBackColor = false;
+            this.btnLimpiarFiltros.Click += new System.EventHandler(this.btnLimpiarFiltros_Click);
+            // 
             // btnBuscarProyecto
             // 
             this.btnBuscarProyecto.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -246,6 +272,7 @@
             this.btnBuscarProyecto.TabIndex = 16;
             this.btnBuscarProyecto.Text = "Buscar";
             this.btnBuscarProyecto.UseVisualStyleBackColor = false;
+            this.btnBuscarProyecto.Click += new System.EventHandler(this.btnBuscarProyecto_Click);
             // 
             // DTFechaFinal
             // 
@@ -256,6 +283,7 @@
             this.DTFechaFinal.Name = "DTFechaFinal";
             this.DTFechaFinal.Size = new System.Drawing.Size(200, 27);
             this.DTFechaFinal.TabIndex = 15;
+            this.DTFechaFinal.ValueChanged += new System.EventHandler(this.DTFechaFinal_ValueChanged);
             // 
             // DTFechaInicio
             // 
@@ -266,6 +294,7 @@
             this.DTFechaInicio.Name = "DTFechaInicio";
             this.DTFechaInicio.Size = new System.Drawing.Size(200, 27);
             this.DTFechaInicio.TabIndex = 14;
+            this.DTFechaInicio.ValueChanged += new System.EventHandler(this.DTFechaInicio_ValueChanged);
             // 
             // label6
             // 
@@ -287,13 +316,14 @@
             this.label5.TabIndex = 12;
             this.label5.Text = "Fecha de Inicio:";
             // 
-            // txtTEP
+            // txtTEPmin
             // 
-            this.txtTEP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTEP.Location = new System.Drawing.Point(607, 16);
-            this.txtTEP.Name = "txtTEP";
-            this.txtTEP.Size = new System.Drawing.Size(97, 28);
-            this.txtTEP.TabIndex = 11;
+            this.txtTEPmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTEPmin.Location = new System.Drawing.Point(607, 16);
+            this.txtTEPmin.Name = "txtTEPmin";
+            this.txtTEPmin.Size = new System.Drawing.Size(97, 28);
+            this.txtTEPmin.TabIndex = 11;
+            this.txtTEPmin.TextChanged += new System.EventHandler(this.txtTEPmin_TextChanged);
             // 
             // comboBoxTEP
             // 
@@ -307,6 +337,7 @@
             this.comboBoxTEP.Name = "comboBoxTEP";
             this.comboBoxTEP.Size = new System.Drawing.Size(155, 28);
             this.comboBoxTEP.TabIndex = 10;
+            this.comboBoxTEP.SelectedIndexChanged += new System.EventHandler(this.comboBoxTEP_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -331,6 +362,7 @@
             this.comboBoxOrdenaEstado.Name = "comboBoxOrdenaEstado";
             this.comboBoxOrdenaEstado.Size = new System.Drawing.Size(155, 28);
             this.comboBoxOrdenaEstado.TabIndex = 8;
+            this.comboBoxOrdenaEstado.SelectedIndexChanged += new System.EventHandler(this.comboBoxOrdenaEstado_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -349,6 +381,7 @@
             this.textBoxBuscarCategoria.Name = "textBoxBuscarCategoria";
             this.textBoxBuscarCategoria.Size = new System.Drawing.Size(151, 28);
             this.textBoxBuscarCategoria.TabIndex = 6;
+            this.textBoxBuscarCategoria.TextChanged += new System.EventHandler(this.textBoxBuscarCategoria_TextChanged);
             // 
             // label2
             // 
@@ -367,6 +400,7 @@
             this.txtNombreBuscar.Name = "txtNombreBuscar";
             this.txtNombreBuscar.Size = new System.Drawing.Size(166, 27);
             this.txtNombreBuscar.TabIndex = 4;
+            this.txtNombreBuscar.TextChanged += new System.EventHandler(this.txtNombreBuscar_TextChanged);
             // 
             // lblProyectoVer
             // 
@@ -448,12 +482,14 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtTEP;
+        private System.Windows.Forms.TextBox txtTEPmin;
         private System.Windows.Forms.DateTimePicker DTFechaFinal;
         private System.Windows.Forms.DateTimePicker DTFechaInicio;
         private System.Windows.Forms.Button btnBuscarProyecto;
         private System.Windows.Forms.Label lblProyectoVer;
         private System.Windows.Forms.Button btnVerTareas;
         private System.Windows.Forms.Button btnVerEmpleados;
+        private System.Windows.Forms.Button btnLimpiarFiltros;
+        private System.Windows.Forms.TextBox txtTEPmax;
     }
 }

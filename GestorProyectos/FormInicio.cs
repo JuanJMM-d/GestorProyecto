@@ -49,6 +49,12 @@ namespace GestorProyectos
             FormCrearProyecto formCrearProyecto = new FormCrearProyecto(this, formProyectos);
             MostrarEnElPanel(formCrearProyecto, panelMenuSeleccionado);
         }
+        private void btnMenuEmpleados_Click(object sender, EventArgs e)
+        {
+            FormEmpleadosInicio formEmpleadosInicio = new FormEmpleadosInicio(this);
+
+            MostrarEnElPanel(formEmpleadosInicio, panelMenuSeleccionado);
+        }
 
         private void btnHome_Click(object sender, EventArgs e)
         {
@@ -68,6 +74,11 @@ namespace GestorProyectos
         {
             btnProyectosLista.PerformClick();
         }
+        public void ejecutarBtnHome()
+        {
+            btnHome.PerformClick();
+        }
+
 
         private void FormInicio_Load(object sender, EventArgs e)
         {
@@ -78,8 +89,7 @@ namespace GestorProyectos
 
         }
 
-        
-
+       
     }
 
     internal class ManejoDeDatos

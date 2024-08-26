@@ -24,12 +24,20 @@ namespace GestorProyectos
 
         private void FormHome_Load(object sender, EventArgs e)
         {
-
+            timerHome.Start();
         }
 
         private void btnHomeLinkProyectos_Click(object sender, EventArgs e)
         {
             formInicio.ejecutarBtnProyectos();
+        }
+
+        //Hora y fecha timer..
+        private void timerHome_Tick(object sender, EventArgs e)
+        {
+            lblFechaHome.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            lblHoraHome.Text = DateTime.Now.ToString("HH:MM:ss");
+
         }
 
         private void btnHomeLinkEmpleados_Click(object sender, EventArgs e)
@@ -56,5 +64,7 @@ namespace GestorProyectos
         {
 
         }
+
+       
     }
 }

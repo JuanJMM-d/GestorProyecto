@@ -48,7 +48,7 @@ namespace GestorProyectos
             if (ValidarDatosCrearProyecto())
             {
                 // si es valido mandar datos al datsatable
-                string Id = txtIdProyecto.Text;
+                string IDProyecto = datosDeProyectos.generarIDProyecto();
                 string pNombre = txtNombreProyecto.Text.Trim();
                 string pCategoria = txtCategoriaProyecto.Text.Trim();
                 string pEstado = comBoxEstadoProyecto.SelectedItem.ToString();
@@ -57,11 +57,12 @@ namespace GestorProyectos
                 string fechaFin = dateTimeLimiteProyecto.Value.ToString("dd/MM/yyyy");
                 string pDescrip = txtDescripcionProyecto.Text;
 
-                datosDeProyectos.dtProyectos.Rows.Add(Id, pNombre, pCategoria, pEstado, pPresupuesto, fechaIn, fechaFin, pDescrip);
+                datosDeProyectos.dtProyectos.Rows.Add(IDProyecto, pNombre, pCategoria, pEstado, pPresupuesto, fechaIn, fechaFin, pDescrip);
                 formProyectos.ActualizardgvProyectos();
 
-                IDProyectoActual = txtIdProyecto.Text;
+                IDProyectoActual = IDProyecto;
                 NombrePoryectoActual = txtNombreProyecto.Text;
+                datosDeProyectos.actualizarCantidadTareasYEmpleados();
                 LanzarFormCrearTarea();
             }
             else MessageBox.Show("err");

@@ -103,6 +103,7 @@
             this.btnMenuEmpleados.TabIndex = 3;
             this.btnMenuEmpleados.Text = "👥 Empleados";
             this.btnMenuEmpleados.UseVisualStyleBackColor = true;
+            this.btnMenuEmpleados.Click += new System.EventHandler(this.btnMenuEmpleados_Click);
             // 
             // btnCrearProycto
             // 
