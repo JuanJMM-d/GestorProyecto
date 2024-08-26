@@ -115,7 +115,7 @@
             this.btnCrearEmpleado.Location = new System.Drawing.Point(9, 140);
             this.btnCrearEmpleado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCrearEmpleado.Name = "btnCrearEmpleado";
-            this.btnCrearEmpleado.Size = new System.Drawing.Size(136, 43);
+            this.btnCrearEmpleado.Size = new System.Drawing.Size(148, 43);
             this.btnCrearEmpleado.TabIndex = 1;
             this.btnCrearEmpleado.Text = "Añadir Empleado";
             this.btnCrearEmpleado.UseVisualStyleBackColor = true;
@@ -165,7 +165,7 @@
             this.btnBuscarProyecto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarProyecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarProyecto.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnBuscarProyecto.Location = new System.Drawing.Point(318, 57);
+            this.btnBuscarProyecto.Location = new System.Drawing.Point(334, 59);
             this.btnBuscarProyecto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBuscarProyecto.Name = "btnBuscarProyecto";
             this.btnBuscarProyecto.Size = new System.Drawing.Size(88, 29);

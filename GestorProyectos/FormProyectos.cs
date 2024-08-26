@@ -32,7 +32,9 @@ namespace GestorProyectos
             
         }
 
-        
+        private void btnBuscarProyecto_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

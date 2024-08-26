@@ -78,8 +78,10 @@ namespace GestorProyectos
 
         }
 
-        
-
+        private void btnMenuEmpleados_Click(object sender, EventArgs e)
+        {
+            form
+        }
     }
 
     internal class ManejoDeDatos
