@@ -102,6 +102,12 @@
     <Compile Include="FormProyectos.Designer.cs">
       <DependentUpon>FormProyectos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormVerEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVerEmpleados.Designer.cs">
+      <DependentUpon>FormVerEmpleados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -131,6 +137,9 @@
     <EmbeddedResource Include="FormProyectos.resx">
       <DependentUpon>FormProyectos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormVerEmpleados.resx">
+      <DependentUpon>FormVerEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -140,6 +149,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\GestorProyectos.Code.Users+Usuarios.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

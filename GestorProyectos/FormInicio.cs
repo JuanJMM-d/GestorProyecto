@@ -80,7 +80,8 @@ namespace GestorProyectos
 
         private void btnMenuEmpleados_Click(object sender, EventArgs e)
         {
-            form
+            FormVerEmpleados formVerEmpleados = new FormVerEmpleados();
+            MostrarEnElPanel(formVerEmpleados, panelMenuSeleccionado);
         }
     }
 
