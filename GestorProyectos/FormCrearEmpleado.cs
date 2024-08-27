@@ -21,5 +21,10 @@ namespace GestorProyectos
         {
 
         }
+
+        private void btnCrearEmpleado_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

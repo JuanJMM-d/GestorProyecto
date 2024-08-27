@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInicio));
             this.panelMenuIzq = new System.Windows.Forms.Panel();
             this.btnProyectosLista = new System.Windows.Forms.Button();
@@ -39,12 +40,17 @@
             this.panelPerfil = new System.Windows.Forms.Panel();
             this.picturePerfilAdmin = new System.Windows.Forms.PictureBox();
             this.lblAdmin = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cambiarDeUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelBarraTitulo = new System.Windows.Forms.Panel();
             this.lblMenuActual = new System.Windows.Forms.Label();
             this.panelMenuSeleccionado = new System.Windows.Forms.Panel();
+            this.crearUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMenuIzq.SuspendLayout();
             this.panelPerfil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picturePerfilAdmin)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.panelBarraTitulo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +65,7 @@
             this.panelMenuIzq.Controls.Add(this.panelPerfil);
             this.panelMenuIzq.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenuIzq.Location = new System.Drawing.Point(0, 0);
-            this.panelMenuIzq.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelMenuIzq.Margin = new System.Windows.Forms.Padding(2);
             this.panelMenuIzq.Name = "panelMenuIzq";
             this.panelMenuIzq.Size = new System.Drawing.Size(202, 538);
             this.panelMenuIzq.TabIndex = 0;
@@ -68,7 +74,7 @@
             // 
             this.btnProyectosLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProyectosLista.Location = new System.Drawing.Point(12, 200);
-            this.btnProyectosLista.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnProyectosLista.Margin = new System.Windows.Forms.Padding(2);
             this.btnProyectosLista.Name = "btnProyectosLista";
             this.btnProyectosLista.Size = new System.Drawing.Size(175, 40);
             this.btnProyectosLista.TabIndex = 6;
@@ -80,7 +86,7 @@
             // 
             this.btnMenuGraficos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenuGraficos.Location = new System.Drawing.Point(12, 380);
-            this.btnMenuGraficos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMenuGraficos.Margin = new System.Windows.Forms.Padding(2);
             this.btnMenuGraficos.Name = "btnMenuGraficos";
             this.btnMenuGraficos.Size = new System.Drawing.Size(175, 40);
             this.btnMenuGraficos.TabIndex = 5;
@@ -91,7 +97,7 @@
             // 
             this.btnMenuBuzon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenuBuzon.Location = new System.Drawing.Point(12, 320);
-            this.btnMenuBuzon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMenuBuzon.Margin = new System.Windows.Forms.Padding(2);
             this.btnMenuBuzon.Name = "btnMenuBuzon";
             this.btnMenuBuzon.Size = new System.Drawing.Size(175, 40);
             this.btnMenuBuzon.TabIndex = 4;
@@ -102,7 +108,7 @@
             // 
             this.btnMenuEmpleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenuEmpleados.Location = new System.Drawing.Point(12, 260);
-            this.btnMenuEmpleados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMenuEmpleados.Margin = new System.Windows.Forms.Padding(2);
             this.btnMenuEmpleados.Name = "btnMenuEmpleados";
             this.btnMenuEmpleados.Size = new System.Drawing.Size(175, 40);
             this.btnMenuEmpleados.TabIndex = 3;
@@ -114,7 +120,7 @@
             // 
             this.btnCrearProycto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCrearProycto.Location = new System.Drawing.Point(12, 80);
-            this.btnCrearProycto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCrearProycto.Margin = new System.Windows.Forms.Padding(2);
             this.btnCrearProycto.Name = "btnCrearProycto";
             this.btnCrearProycto.Size = new System.Drawing.Size(175, 40);
             this.btnCrearProycto.TabIndex = 2;
@@ -127,7 +133,7 @@
             // 
             this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.Location = new System.Drawing.Point(12, 140);
-            this.btnHome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(2);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(175, 40);
             this.btnHome.TabIndex = 1;
@@ -141,7 +147,7 @@
             this.panelPerfil.Controls.Add(this.lblAdmin);
             this.panelPerfil.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelPerfil.Location = new System.Drawing.Point(0, 0);
-            this.panelPerfil.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelPerfil.Margin = new System.Windows.Forms.Padding(2);
             this.panelPerfil.Name = "panelPerfil";
             this.panelPerfil.Size = new System.Drawing.Size(202, 59);
             this.panelPerfil.TabIndex = 0;
@@ -151,7 +157,7 @@
             this.picturePerfilAdmin.Dock = System.Windows.Forms.DockStyle.Left;
             this.picturePerfilAdmin.Image = ((System.Drawing.Image)(resources.GetObject("picturePerfilAdmin.Image")));
             this.picturePerfilAdmin.Location = new System.Drawing.Point(0, 0);
-            this.picturePerfilAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picturePerfilAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.picturePerfilAdmin.Name = "picturePerfilAdmin";
             this.picturePerfilAdmin.Size = new System.Drawing.Size(84, 59);
             this.picturePerfilAdmin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -161,6 +167,7 @@
             // lblAdmin
             // 
             this.lblAdmin.AutoSize = true;
+            this.lblAdmin.ContextMenuStrip = this.contextMenuStrip1;
             this.lblAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAdmin.Location = new System.Drawing.Point(87, 23);
             this.lblAdmin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -169,12 +176,35 @@
             this.lblAdmin.TabIndex = 0;
             this.lblAdmin.Text = "Admistrador";
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cambiarDeUsuarioToolStripMenuItem,
+            this.crearUsuarioToolStripMenuItem,
+            this.salirToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(179, 70);
+            // 
+            // cambiarDeUsuarioToolStripMenuItem
+            // 
+            this.cambiarDeUsuarioToolStripMenuItem.Name = "cambiarDeUsuarioToolStripMenuItem";
+            this.cambiarDeUsuarioToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.cambiarDeUsuarioToolStripMenuItem.Text = "Cambiar de Usuario";
+            this.cambiarDeUsuarioToolStripMenuItem.Click += new System.EventHandler(this.cambiarDeUsuarioToolStripMenuItem_Click);
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            // 
             // panelBarraTitulo
             // 
             this.panelBarraTitulo.Controls.Add(this.lblMenuActual);
             this.panelBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBarraTitulo.Location = new System.Drawing.Point(202, 0);
-            this.panelBarraTitulo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelBarraTitulo.Margin = new System.Windows.Forms.Padding(2);
             this.panelBarraTitulo.Name = "panelBarraTitulo";
             this.panelBarraTitulo.Size = new System.Drawing.Size(745, 41);
             this.panelBarraTitulo.TabIndex = 1;
@@ -194,11 +224,17 @@
             // 
             this.panelMenuSeleccionado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMenuSeleccionado.Location = new System.Drawing.Point(202, 41);
-            this.panelMenuSeleccionado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelMenuSeleccionado.Margin = new System.Windows.Forms.Padding(2);
             this.panelMenuSeleccionado.Name = "panelMenuSeleccionado";
             this.panelMenuSeleccionado.Size = new System.Drawing.Size(745, 497);
             this.panelMenuSeleccionado.TabIndex = 2;
             this.panelMenuSeleccionado.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenuSeleccionado_Paint);
+            // 
+            // crearUsuarioToolStripMenuItem
+            // 
+            this.crearUsuarioToolStripMenuItem.Name = "crearUsuarioToolStripMenuItem";
+            this.crearUsuarioToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.crearUsuarioToolStripMenuItem.Text = "Crear Usuario";
             // 
             // FormInicio
             // 
@@ -208,7 +244,7 @@
             this.Controls.Add(this.panelMenuSeleccionado);
             this.Controls.Add(this.panelBarraTitulo);
             this.Controls.Add(this.panelMenuIzq);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormInicio";
             this.Text = "Inicio (Admin)";
             this.Load += new System.EventHandler(this.FormInicio_Load);
@@ -216,6 +252,7 @@
             this.panelPerfil.ResumeLayout(false);
             this.panelPerfil.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picturePerfilAdmin)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.panelBarraTitulo.ResumeLayout(false);
             this.panelBarraTitulo.PerformLayout();
             this.ResumeLayout(false);
@@ -237,5 +274,9 @@
         private System.Windows.Forms.Button btnMenuEmpleados;
         private System.Windows.Forms.Button btnCrearProycto;
         private System.Windows.Forms.Button btnProyectosLista;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem cambiarDeUsuarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem crearUsuarioToolStripMenuItem;
     }
 }

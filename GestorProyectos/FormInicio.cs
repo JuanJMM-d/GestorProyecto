@@ -89,7 +89,18 @@ namespace GestorProyectos
 
         }
 
-       
+        private void cambiarDeUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            Form1 form1 = (Form1)this.ParentForm;
+            form1.CargarForm();
+            this.Close();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 
     internal class ManejoDeDatos

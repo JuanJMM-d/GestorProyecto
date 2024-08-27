@@ -24,9 +24,14 @@ namespace GestorProyectos
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            CargarForm();
+        }
+
+        public void CargarForm()
+        {
             //crear instancias de formularios
             formLogin = new FormLogin(this);   // con this enviamos la instancia actual
-            formInicio = new FormInicio();  
+            formInicio = new FormInicio();
 
 
             //cargar el form login

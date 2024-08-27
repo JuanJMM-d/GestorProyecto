@@ -41,5 +41,11 @@ namespace GestorProyectos
         {
 
         }
+
+        private void btnCrearEmpleado_Click(object sender, EventArgs e)
+        {
+            FormCrearEmpleado frm = new FormCrearEmpleado();
+            frm.Show();
+        }
     }
 }
