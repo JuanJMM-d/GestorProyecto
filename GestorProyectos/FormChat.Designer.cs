@@ -28,17 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbDestinatario = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txbMensaje = new System.Windows.Forms.TextBox();
             this.txbChat = new System.Windows.Forms.RichTextBox();
-            this.datosUsuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.datosUsuariosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.datosUsuariosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datosUsuariosBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -92,14 +87,6 @@
             this.txbChat.TabIndex = 5;
             this.txbChat.Text = "";
             // 
-            // datosUsuariosBindingSource
-            // 
-            this.datosUsuariosBindingSource.DataSource = typeof(GestorProyectos.Code.Users.DatosUsuarios);
-            // 
-            // datosUsuariosBindingSource1
-            // 
-            this.datosUsuariosBindingSource1.DataSource = typeof(GestorProyectos.Code.Users.DatosUsuarios);
-            // 
             // FormChat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -110,8 +97,6 @@
             this.Text = "FormChat";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.datosUsuariosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datosUsuariosBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -123,7 +108,5 @@
         private System.Windows.Forms.TextBox txbMensaje;
         private System.Windows.Forms.ComboBox cbDestinatario;
         private System.Windows.Forms.RichTextBox txbChat;
-        private System.Windows.Forms.BindingSource datosUsuariosBindingSource1;
-        private System.Windows.Forms.BindingSource datosUsuariosBindingSource;
     }
 }
