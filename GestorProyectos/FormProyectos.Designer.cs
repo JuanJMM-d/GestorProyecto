@@ -66,7 +66,6 @@
             this.btnEditarProyecto = new System.Windows.Forms.Button();
             this.btnElimarProyecto = new System.Windows.Forms.Button();
             this.btnEditarTaea = new System.Windows.Forms.Button();
-            this.btnVerDescripcion = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProyectos)).BeginInit();
             this.menuStripProyectos.SuspendLayout();
             this.grpboxBuscarProyectos.SuspendLayout();
@@ -443,7 +442,7 @@
             // btnVerTareas
             // 
             this.btnVerTareas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerTareas.Location = new System.Drawing.Point(163, 411);
+            this.btnVerTareas.Location = new System.Drawing.Point(229, 411);
             this.btnVerTareas.Margin = new System.Windows.Forms.Padding(2);
             this.btnVerTareas.Name = "btnVerTareas";
             this.btnVerTareas.Size = new System.Drawing.Size(102, 37);
@@ -455,7 +454,7 @@
             // btnEditarProyecto
             // 
             this.btnEditarProyecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarProyecto.Location = new System.Drawing.Point(304, 411);
+            this.btnEditarProyecto.Location = new System.Drawing.Point(370, 411);
             this.btnEditarProyecto.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditarProyecto.Name = "btnEditarProyecto";
             this.btnEditarProyecto.Size = new System.Drawing.Size(102, 37);
@@ -467,7 +466,7 @@
             // btnElimarProyecto
             // 
             this.btnElimarProyecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnElimarProyecto.Location = new System.Drawing.Point(448, 411);
+            this.btnElimarProyecto.Location = new System.Drawing.Point(514, 411);
             this.btnElimarProyecto.Margin = new System.Windows.Forms.Padding(2);
             this.btnElimarProyecto.Name = "btnElimarProyecto";
             this.btnElimarProyecto.Size = new System.Drawing.Size(102, 37);
@@ -479,7 +478,7 @@
             // btnEditarTaea
             // 
             this.btnEditarTaea.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarTaea.Location = new System.Drawing.Point(11, 411);
+            this.btnEditarTaea.Location = new System.Drawing.Point(77, 411);
             this.btnEditarTaea.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditarTaea.Name = "btnEditarTaea";
             this.btnEditarTaea.Size = new System.Drawing.Size(102, 37);
@@ -488,25 +487,12 @@
             this.btnEditarTaea.UseVisualStyleBackColor = true;
             this.btnEditarTaea.Click += new System.EventHandler(this.btnEditarTaea_Click);
             // 
-            // btnVerDescripcion
-            // 
-            this.btnVerDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerDescripcion.Location = new System.Drawing.Point(587, 411);
-            this.btnVerDescripcion.Margin = new System.Windows.Forms.Padding(2);
-            this.btnVerDescripcion.Name = "btnVerDescripcion";
-            this.btnVerDescripcion.Size = new System.Drawing.Size(127, 37);
-            this.btnVerDescripcion.TabIndex = 22;
-            this.btnVerDescripcion.Text = "Ver Descripcion";
-            this.btnVerDescripcion.UseVisualStyleBackColor = true;
-            this.btnVerDescripcion.Click += new System.EventHandler(this.btnVerDescripcion_Click);
-            // 
             // FormProyectos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkCyan;
             this.ClientSize = new System.Drawing.Size(725, 459);
-            this.Controls.Add(this.btnVerDescripcion);
             this.Controls.Add(this.btnEditarTaea);
             this.Controls.Add(this.btnElimarProyecto);
             this.Controls.Add(this.btnEditarProyecto);
@@ -566,6 +552,5 @@
         private System.Windows.Forms.TextBox txtTEPmax;
         private System.Windows.Forms.Button btnElimarProyecto;
         private System.Windows.Forms.Button btnEditarTaea;
-        private System.Windows.Forms.Button btnVerDescripcion;
     }
 }

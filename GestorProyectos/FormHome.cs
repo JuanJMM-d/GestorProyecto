@@ -37,12 +37,12 @@ namespace GestorProyectos
         {
             lblFechaHome.Text = DateTime.Now.ToString("dd/MM/yyyy");
             lblHoraHome.Text = DateTime.Now.ToString("HH:MM:ss");
-
         }
 
         private void btnHomeLinkEmpleados_Click(object sender, EventArgs e)
         {
-
+            FormColaboradores formColaboradores = new FormColaboradores();
+            formColaboradores.Show();
         }
 
         private void btnHomeLinkGraficos_Click(object sender, EventArgs e)

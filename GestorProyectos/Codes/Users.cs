@@ -35,6 +35,8 @@ namespace GestorProyectos.Code
             }
         }
 
+
+
         public static class Autenticacion
         {
             public static bool ValidarCredenciales(string nombreUsuario, string contrasena)
