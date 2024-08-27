@@ -205,14 +205,12 @@ namespace GestorProyectos
                 btnEditarProyecto.Enabled = true;
                 btnEditarTaea.Enabled = true;
                 btnElimarProyecto.Enabled = true;
-                btnVerDescripcion.Enabled = true;
             }
             else
             {
                 btnEditarTaea.Enabled = false;
                 btnEditarProyecto.Enabled = false;
                 btnElimarProyecto.Enabled = false;  
-                btnVerDescripcion.Enabled = false;
             }
         }
 

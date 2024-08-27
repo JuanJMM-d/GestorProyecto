@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.btnHomeLinkGraficos = new System.Windows.Forms.Button();
-            this.btnHomeLinkBuzon = new System.Windows.Forms.Button();
             this.btnHomeLinkEmpleados = new System.Windows.Forms.Button();
             this.btnHomeLinkProyectos = new System.Windows.Forms.Button();
             this.lblFechaHome = new System.Windows.Forms.Label();
@@ -38,35 +36,11 @@
             this.timerHome = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
-            // btnHomeLinkGraficos
-            // 
-            this.btnHomeLinkGraficos.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHomeLinkGraficos.Location = new System.Drawing.Point(362, 265);
-            this.btnHomeLinkGraficos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnHomeLinkGraficos.Name = "btnHomeLinkGraficos";
-            this.btnHomeLinkGraficos.Size = new System.Drawing.Size(170, 110);
-            this.btnHomeLinkGraficos.TabIndex = 12;
-            this.btnHomeLinkGraficos.Text = "Tu \r\nseguimiento\r\n📊";
-            this.btnHomeLinkGraficos.UseVisualStyleBackColor = true;
-            this.btnHomeLinkGraficos.Click += new System.EventHandler(this.btnHomeLinkGraficos_Click);
-            // 
-            // btnHomeLinkBuzon
-            // 
-            this.btnHomeLinkBuzon.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHomeLinkBuzon.Location = new System.Drawing.Point(168, 265);
-            this.btnHomeLinkBuzon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnHomeLinkBuzon.Name = "btnHomeLinkBuzon";
-            this.btnHomeLinkBuzon.Size = new System.Drawing.Size(170, 110);
-            this.btnHomeLinkBuzon.TabIndex = 11;
-            this.btnHomeLinkBuzon.Text = "Tus \r\nnotificaciones\r\n(Buzon)";
-            this.btnHomeLinkBuzon.UseVisualStyleBackColor = true;
-            this.btnHomeLinkBuzon.Click += new System.EventHandler(this.btnHomeLinkBuzon_Click);
-            // 
             // btnHomeLinkEmpleados
             // 
             this.btnHomeLinkEmpleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHomeLinkEmpleados.Location = new System.Drawing.Point(362, 137);
-            this.btnHomeLinkEmpleados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHomeLinkEmpleados.Location = new System.Drawing.Point(355, 183);
+            this.btnHomeLinkEmpleados.Margin = new System.Windows.Forms.Padding(2);
             this.btnHomeLinkEmpleados.Name = "btnHomeLinkEmpleados";
             this.btnHomeLinkEmpleados.Size = new System.Drawing.Size(170, 110);
             this.btnHomeLinkEmpleados.TabIndex = 10;
@@ -77,8 +51,8 @@
             // btnHomeLinkProyectos
             // 
             this.btnHomeLinkProyectos.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHomeLinkProyectos.Location = new System.Drawing.Point(164, 137);
-            this.btnHomeLinkProyectos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHomeLinkProyectos.Location = new System.Drawing.Point(157, 183);
+            this.btnHomeLinkProyectos.Margin = new System.Windows.Forms.Padding(2);
             this.btnHomeLinkProyectos.Name = "btnHomeLinkProyectos";
             this.btnHomeLinkProyectos.Size = new System.Drawing.Size(175, 110);
             this.btnHomeLinkProyectos.TabIndex = 9;
@@ -115,6 +89,7 @@
             // 
             // timerHome
             // 
+            this.timerHome.Interval = 1;
             this.timerHome.Tick += new System.EventHandler(this.timerHome_Tick);
             // 
             // FormHome
@@ -123,13 +98,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkCyan;
             this.ClientSize = new System.Drawing.Size(725, 459);
-            this.Controls.Add(this.btnHomeLinkGraficos);
-            this.Controls.Add(this.btnHomeLinkBuzon);
             this.Controls.Add(this.btnHomeLinkEmpleados);
             this.Controls.Add(this.btnHomeLinkProyectos);
             this.Controls.Add(this.lblFechaHome);
             this.Controls.Add(this.lblHoraHome);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormHome";
             this.Text = "FormHome";
             this.Load += new System.EventHandler(this.FormHome_Load);
@@ -139,9 +112,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnHomeLinkGraficos;
-        private System.Windows.Forms.Button btnHomeLinkBuzon;
         private System.Windows.Forms.Button btnHomeLinkEmpleados;
         private System.Windows.Forms.Button btnHomeLinkProyectos;
         private System.Windows.Forms.Label lblFechaHome;
