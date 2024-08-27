@@ -87,7 +87,7 @@
             // 
             this.lblAddEmpleadoTarea.AutoSize = true;
             this.lblAddEmpleadoTarea.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddEmpleadoTarea.Location = new System.Drawing.Point(429, 19);
+            this.lblAddEmpleadoTarea.Location = new System.Drawing.Point(346, 18);
             this.lblAddEmpleadoTarea.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAddEmpleadoTarea.Name = "lblAddEmpleadoTarea";
             this.lblAddEmpleadoTarea.Size = new System.Drawing.Size(13, 18);
@@ -209,12 +209,12 @@
             // 
             // AddEmpleado
             // 
-            this.AddEmpleado.Location = new System.Drawing.Point(172, 146);
+            this.AddEmpleado.Location = new System.Drawing.Point(135, 146);
             this.AddEmpleado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.AddEmpleado.Name = "AddEmpleado";
-            this.AddEmpleado.Size = new System.Drawing.Size(100, 22);
+            this.AddEmpleado.Size = new System.Drawing.Size(137, 31);
             this.AddEmpleado.TabIndex = 26;
-            this.AddEmpleado.Text = "add Empleado";
+            this.AddEmpleado.Text = "Asignar Empleado";
             this.AddEmpleado.UseVisualStyleBackColor = true;
             this.AddEmpleado.Click += new System.EventHandler(this.AddEmpleado_Click);
             // 

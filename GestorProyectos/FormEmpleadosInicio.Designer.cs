@@ -109,6 +109,7 @@
             // btnBuscarProyecto
             // 
             this.btnBuscarProyecto.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnBuscarProyecto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarProyecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarProyecto.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnBuscarProyecto.Location = new System.Drawing.Point(318, 57);

@@ -134,7 +134,7 @@
             // 
             this.txtNombreProyecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreProyecto.Location = new System.Drawing.Point(129, 53);
-            this.txtNombreProyecto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombreProyecto.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombreProyecto.Name = "txtNombreProyecto";
             this.txtNombreProyecto.Size = new System.Drawing.Size(160, 24);
             this.txtNombreProyecto.TabIndex = 8;
@@ -144,7 +144,7 @@
             // 
             this.txtCategoriaProyecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCategoriaProyecto.Location = new System.Drawing.Point(129, 94);
-            this.txtCategoriaProyecto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCategoriaProyecto.Margin = new System.Windows.Forms.Padding(2);
             this.txtCategoriaProyecto.Name = "txtCategoriaProyecto";
             this.txtCategoriaProyecto.Size = new System.Drawing.Size(160, 24);
             this.txtCategoriaProyecto.TabIndex = 9;
@@ -160,7 +160,7 @@
             "Por empezar",
             "Pausado"});
             this.comBoxEstadoProyecto.Location = new System.Drawing.Point(129, 145);
-            this.comBoxEstadoProyecto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comBoxEstadoProyecto.Margin = new System.Windows.Forms.Padding(2);
             this.comBoxEstadoProyecto.Name = "comBoxEstadoProyecto";
             this.comBoxEstadoProyecto.Size = new System.Drawing.Size(160, 25);
             this.comBoxEstadoProyecto.TabIndex = 10;
@@ -170,7 +170,7 @@
             // 
             this.txtPresupuestoProyecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPresupuestoProyecto.Location = new System.Drawing.Point(129, 192);
-            this.txtPresupuestoProyecto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPresupuestoProyecto.Margin = new System.Windows.Forms.Padding(2);
             this.txtPresupuestoProyecto.Name = "txtPresupuestoProyecto";
             this.txtPresupuestoProyecto.Size = new System.Drawing.Size(160, 24);
             this.txtPresupuestoProyecto.TabIndex = 11;
@@ -182,7 +182,7 @@
             this.dateTimeLimiteProyecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimeLimiteProyecto.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimeLimiteProyecto.Location = new System.Drawing.Point(129, 297);
-            this.dateTimeLimiteProyecto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimeLimiteProyecto.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimeLimiteProyecto.Name = "dateTimeLimiteProyecto";
             this.dateTimeLimiteProyecto.Size = new System.Drawing.Size(151, 23);
             this.dateTimeLimiteProyecto.TabIndex = 12;
@@ -194,7 +194,7 @@
             this.dateTimeInicioProyecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimeInicioProyecto.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimeInicioProyecto.Location = new System.Drawing.Point(129, 251);
-            this.dateTimeInicioProyecto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimeInicioProyecto.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimeInicioProyecto.Name = "dateTimeInicioProyecto";
             this.dateTimeInicioProyecto.Size = new System.Drawing.Size(151, 23);
             this.dateTimeInicioProyecto.TabIndex = 13;
@@ -204,7 +204,7 @@
             // 
             this.txtDescripcionProyecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescripcionProyecto.Location = new System.Drawing.Point(332, 128);
-            this.txtDescripcionProyecto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDescripcionProyecto.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescripcionProyecto.Multiline = true;
             this.txtDescripcionProyecto.Name = "txtDescripcionProyecto";
             this.txtDescripcionProyecto.Size = new System.Drawing.Size(290, 200);
@@ -214,10 +214,11 @@
             // btnCrearEditProyecto
             // 
             this.btnCrearEditProyecto.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnCrearEditProyecto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCrearEditProyecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCrearEditProyecto.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnCrearEditProyecto.Location = new System.Drawing.Point(407, 348);
-            this.btnCrearEditProyecto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCrearEditProyecto.Margin = new System.Windows.Forms.Padding(2);
             this.btnCrearEditProyecto.Name = "btnCrearEditProyecto";
             this.btnCrearEditProyecto.Size = new System.Drawing.Size(152, 34);
             this.btnCrearEditProyecto.TabIndex = 15;
@@ -259,7 +260,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormCrearProyecto";
             this.Text = "FormCrearProyecto";
             this.Load += new System.EventHandler(this.FormCrearProyecto_Load);
