@@ -47,7 +47,7 @@
             // 
             this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmpleados.Location = new System.Drawing.Point(9, 188);
-            this.dgvEmpleados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvEmpleados.Margin = new System.Windows.Forms.Padding(2);
             this.dgvEmpleados.Name = "dgvEmpleados";
             this.dgvEmpleados.RowHeadersWidth = 51;
             this.dgvEmpleados.RowTemplate.Height = 24;
@@ -59,7 +59,7 @@
             // 
             this.btnCrearEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCrearEmpleado.Location = new System.Drawing.Point(9, 140);
-            this.btnCrearEmpleado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCrearEmpleado.Margin = new System.Windows.Forms.Padding(2);
             this.btnCrearEmpleado.Name = "btnCrearEmpleado";
             this.btnCrearEmpleado.Size = new System.Drawing.Size(153, 43);
             this.btnCrearEmpleado.TabIndex = 1;
@@ -78,9 +78,9 @@
             this.grpboxBuscarProyectos.Controls.Add(this.txtNombreBuscarEmpleado);
             this.grpboxBuscarProyectos.Controls.Add(this.label1);
             this.grpboxBuscarProyectos.Location = new System.Drawing.Point(52, 10);
-            this.grpboxBuscarProyectos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpboxBuscarProyectos.Margin = new System.Windows.Forms.Padding(2);
             this.grpboxBuscarProyectos.Name = "grpboxBuscarProyectos";
-            this.grpboxBuscarProyectos.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpboxBuscarProyectos.Padding = new System.Windows.Forms.Padding(2);
             this.grpboxBuscarProyectos.Size = new System.Drawing.Size(614, 110);
             this.grpboxBuscarProyectos.TabIndex = 5;
             this.grpboxBuscarProyectos.TabStop = false;
@@ -90,7 +90,7 @@
             // 
             this.txtBuscarIdEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscarIdEmpleado.Location = new System.Drawing.Point(75, 62);
-            this.txtBuscarIdEmpleado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBuscarIdEmpleado.Margin = new System.Windows.Forms.Padding(2);
             this.txtBuscarIdEmpleado.Name = "txtBuscarIdEmpleado";
             this.txtBuscarIdEmpleado.Size = new System.Drawing.Size(126, 23);
             this.txtBuscarIdEmpleado.TabIndex = 18;
@@ -112,7 +112,7 @@
             this.btnBuscarProyecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarProyecto.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnBuscarProyecto.Location = new System.Drawing.Point(318, 57);
-            this.btnBuscarProyecto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscarProyecto.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscarProyecto.Name = "btnBuscarProyecto";
             this.btnBuscarProyecto.Size = new System.Drawing.Size(88, 29);
             this.btnBuscarProyecto.TabIndex = 16;
@@ -123,7 +123,7 @@
             // 
             this.txtPTRmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPTRmin.Location = new System.Drawing.Point(455, 13);
-            this.txtPTRmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPTRmin.Margin = new System.Windows.Forms.Padding(2);
             this.txtPTRmin.Name = "txtPTRmin";
             this.txtPTRmin.Size = new System.Drawing.Size(74, 24);
             this.txtPTRmin.TabIndex = 11;
@@ -138,7 +138,7 @@
             "Empleados",
             "Presupuesto\t\t\t\t"});
             this.comboBoxPTR.Location = new System.Drawing.Point(334, 13);
-            this.comboBoxPTR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxPTR.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxPTR.Name = "comboBoxPTR";
             this.comboBoxPTR.Size = new System.Drawing.Size(117, 25);
             this.comboBoxPTR.TabIndex = 10;
@@ -158,7 +158,7 @@
             // 
             this.txtNombreBuscarEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreBuscarEmpleado.Location = new System.Drawing.Point(75, 17);
-            this.txtNombreBuscarEmpleado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombreBuscarEmpleado.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombreBuscarEmpleado.Name = "txtNombreBuscarEmpleado";
             this.txtNombreBuscarEmpleado.Size = new System.Drawing.Size(126, 23);
             this.txtNombreBuscarEmpleado.TabIndex = 4;
@@ -178,11 +178,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DarkCyan;
             this.ClientSize = new System.Drawing.Size(725, 459);
             this.Controls.Add(this.grpboxBuscarProyectos);
             this.Controls.Add(this.btnCrearEmpleado);
             this.Controls.Add(this.dgvEmpleados);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormEmpleadosInicio";
             this.Text = "Inicio (Empleado)";
             this.Load += new System.EventHandler(this.FormEmpleadosInicio_Load);

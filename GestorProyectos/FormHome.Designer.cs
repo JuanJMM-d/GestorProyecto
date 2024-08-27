@@ -41,9 +41,10 @@
             // btnHomeLinkGraficos
             // 
             this.btnHomeLinkGraficos.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHomeLinkGraficos.Location = new System.Drawing.Point(482, 326);
+            this.btnHomeLinkGraficos.Location = new System.Drawing.Point(362, 265);
+            this.btnHomeLinkGraficos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnHomeLinkGraficos.Name = "btnHomeLinkGraficos";
-            this.btnHomeLinkGraficos.Size = new System.Drawing.Size(227, 136);
+            this.btnHomeLinkGraficos.Size = new System.Drawing.Size(170, 110);
             this.btnHomeLinkGraficos.TabIndex = 12;
             this.btnHomeLinkGraficos.Text = "Tu \r\nseguimiento\r\n📊";
             this.btnHomeLinkGraficos.UseVisualStyleBackColor = true;
@@ -52,9 +53,10 @@
             // btnHomeLinkBuzon
             // 
             this.btnHomeLinkBuzon.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHomeLinkBuzon.Location = new System.Drawing.Point(224, 326);
+            this.btnHomeLinkBuzon.Location = new System.Drawing.Point(168, 265);
+            this.btnHomeLinkBuzon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnHomeLinkBuzon.Name = "btnHomeLinkBuzon";
-            this.btnHomeLinkBuzon.Size = new System.Drawing.Size(227, 136);
+            this.btnHomeLinkBuzon.Size = new System.Drawing.Size(170, 110);
             this.btnHomeLinkBuzon.TabIndex = 11;
             this.btnHomeLinkBuzon.Text = "Tus \r\nnotificaciones\r\n(Buzon)";
             this.btnHomeLinkBuzon.UseVisualStyleBackColor = true;
@@ -63,9 +65,10 @@
             // btnHomeLinkEmpleados
             // 
             this.btnHomeLinkEmpleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHomeLinkEmpleados.Location = new System.Drawing.Point(482, 169);
+            this.btnHomeLinkEmpleados.Location = new System.Drawing.Point(362, 137);
+            this.btnHomeLinkEmpleados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnHomeLinkEmpleados.Name = "btnHomeLinkEmpleados";
-            this.btnHomeLinkEmpleados.Size = new System.Drawing.Size(227, 136);
+            this.btnHomeLinkEmpleados.Size = new System.Drawing.Size(170, 110);
             this.btnHomeLinkEmpleados.TabIndex = 10;
             this.btnHomeLinkEmpleados.Text = "Tus \r\ncolaboradores\r\n";
             this.btnHomeLinkEmpleados.UseVisualStyleBackColor = true;
@@ -74,9 +77,10 @@
             // btnHomeLinkProyectos
             // 
             this.btnHomeLinkProyectos.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHomeLinkProyectos.Location = new System.Drawing.Point(218, 169);
+            this.btnHomeLinkProyectos.Location = new System.Drawing.Point(164, 137);
+            this.btnHomeLinkProyectos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnHomeLinkProyectos.Name = "btnHomeLinkProyectos";
-            this.btnHomeLinkProyectos.Size = new System.Drawing.Size(233, 136);
+            this.btnHomeLinkProyectos.Size = new System.Drawing.Size(175, 110);
             this.btnHomeLinkProyectos.TabIndex = 9;
             this.btnHomeLinkProyectos.Text = "Tus \r\nproyectos";
             this.btnHomeLinkProyectos.UseVisualStyleBackColor = true;
@@ -87,9 +91,10 @@
             this.lblFechaHome.AutoSize = true;
             this.lblFechaHome.BackColor = System.Drawing.Color.GreenYellow;
             this.lblFechaHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaHome.Location = new System.Drawing.Point(410, 100);
+            this.lblFechaHome.Location = new System.Drawing.Point(308, 81);
+            this.lblFechaHome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFechaHome.Name = "lblFechaHome";
-            this.lblFechaHome.Size = new System.Drawing.Size(19, 29);
+            this.lblFechaHome.Size = new System.Drawing.Size(15, 24);
             this.lblFechaHome.TabIndex = 8;
             this.lblFechaHome.Text = " ";
             this.lblFechaHome.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -100,9 +105,10 @@
             this.lblHoraHome.AutoSize = true;
             this.lblHoraHome.BackColor = System.Drawing.Color.GreenYellow;
             this.lblHoraHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHoraHome.Location = new System.Drawing.Point(407, 42);
+            this.lblHoraHome.Location = new System.Drawing.Point(305, 34);
+            this.lblHoraHome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHoraHome.Name = "lblHoraHome";
-            this.lblHoraHome.Size = new System.Drawing.Size(32, 46);
+            this.lblHoraHome.Size = new System.Drawing.Size(27, 37);
             this.lblHoraHome.TabIndex = 7;
             this.lblHoraHome.Text = " ";
             this.lblHoraHome.Click += new System.EventHandler(this.lblHoraHome_Click);
@@ -113,15 +119,17 @@
             // 
             // FormHome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(967, 565);
+            this.BackColor = System.Drawing.Color.DarkCyan;
+            this.ClientSize = new System.Drawing.Size(725, 459);
             this.Controls.Add(this.btnHomeLinkGraficos);
             this.Controls.Add(this.btnHomeLinkBuzon);
             this.Controls.Add(this.btnHomeLinkEmpleados);
             this.Controls.Add(this.btnHomeLinkProyectos);
             this.Controls.Add(this.lblFechaHome);
             this.Controls.Add(this.lblHoraHome);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormHome";
             this.Text = "FormHome";
             this.Load += new System.EventHandler(this.FormHome_Load);

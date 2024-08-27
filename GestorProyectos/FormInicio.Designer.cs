@@ -226,9 +226,9 @@
             this.lblMenuActual.Location = new System.Drawing.Point(328, 7);
             this.lblMenuActual.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMenuActual.Name = "lblMenuActual";
-            this.lblMenuActual.Size = new System.Drawing.Size(155, 26);
+            this.lblMenuActual.Size = new System.Drawing.Size(120, 26);
             this.lblMenuActual.TabIndex = 0;
-            this.lblMenuActual.Text = "menu actual....";
+            this.lblMenuActual.Text = "Bienvenido";
             // 
             // panelMenuSeleccionado
             // 
@@ -244,6 +244,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DarkCyan;
             this.ClientSize = new System.Drawing.Size(947, 538);
             this.Controls.Add(this.panelMenuSeleccionado);
             this.Controls.Add(this.panelBarraTitulo);

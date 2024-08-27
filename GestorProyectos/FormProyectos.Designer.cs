@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvProyectos = new System.Windows.Forms.DataGridView();
             this.menuStripProyectos = new System.Windows.Forms.MenuStrip();
             this.menuStripOrdenar = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,25 +74,25 @@
             // 
             // dgvProyectos
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProyectos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProyectos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvProyectos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProyectos.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProyectos.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvProyectos.Location = new System.Drawing.Point(9, 176);
-            this.dgvProyectos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvProyectos.Margin = new System.Windows.Forms.Padding(2);
             this.dgvProyectos.Name = "dgvProyectos";
             this.dgvProyectos.RowHeadersWidth = 51;
             this.dgvProyectos.RowTemplate.Height = 35;
@@ -104,6 +104,7 @@
             // 
             // menuStripProyectos
             // 
+            this.menuStripProyectos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.menuStripProyectos.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStripProyectos.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStripProyectos.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -240,20 +241,19 @@
             this.grpboxBuscarProyectos.Controls.Add(this.label2);
             this.grpboxBuscarProyectos.Controls.Add(this.txtNombreBuscar);
             this.grpboxBuscarProyectos.Controls.Add(this.label1);
-            this.grpboxBuscarProyectos.Location = new System.Drawing.Point(88, 10);
-            this.grpboxBuscarProyectos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpboxBuscarProyectos.Location = new System.Drawing.Point(88, 11);
+            this.grpboxBuscarProyectos.Margin = new System.Windows.Forms.Padding(2);
             this.grpboxBuscarProyectos.Name = "grpboxBuscarProyectos";
-            this.grpboxBuscarProyectos.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpboxBuscarProyectos.Padding = new System.Windows.Forms.Padding(2);
             this.grpboxBuscarProyectos.Size = new System.Drawing.Size(614, 152);
             this.grpboxBuscarProyectos.TabIndex = 4;
             this.grpboxBuscarProyectos.TabStop = false;
-            this.grpboxBuscarProyectos.Text = "groupBox1";
             // 
             // txtTEPmax
             // 
             this.txtTEPmax.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTEPmax.Location = new System.Drawing.Point(532, 15);
-            this.txtTEPmax.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTEPmax.Margin = new System.Windows.Forms.Padding(2);
             this.txtTEPmax.Name = "txtTEPmax";
             this.txtTEPmax.Size = new System.Drawing.Size(74, 24);
             this.txtTEPmax.TabIndex = 18;
@@ -265,7 +265,7 @@
             this.btnLimpiarFiltros.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiarFiltros.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnLimpiarFiltros.Location = new System.Drawing.Point(503, 118);
-            this.btnLimpiarFiltros.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLimpiarFiltros.Margin = new System.Windows.Forms.Padding(2);
             this.btnLimpiarFiltros.Name = "btnLimpiarFiltros";
             this.btnLimpiarFiltros.Size = new System.Drawing.Size(88, 29);
             this.btnLimpiarFiltros.TabIndex = 17;
@@ -279,7 +279,7 @@
             this.btnBuscarProyecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarProyecto.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnBuscarProyecto.Location = new System.Drawing.Point(230, 118);
-            this.btnBuscarProyecto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscarProyecto.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscarProyecto.Name = "btnBuscarProyecto";
             this.btnBuscarProyecto.Size = new System.Drawing.Size(88, 29);
             this.btnBuscarProyecto.TabIndex = 16;
@@ -293,7 +293,7 @@
             this.DTFechaFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DTFechaFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DTFechaFinal.Location = new System.Drawing.Point(360, 85);
-            this.DTFechaFinal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DTFechaFinal.Margin = new System.Windows.Forms.Padding(2);
             this.DTFechaFinal.Name = "DTFechaFinal";
             this.DTFechaFinal.Size = new System.Drawing.Size(151, 23);
             this.DTFechaFinal.TabIndex = 15;
@@ -305,7 +305,7 @@
             this.DTFechaInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DTFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DTFechaInicio.Location = new System.Drawing.Point(360, 55);
-            this.DTFechaInicio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DTFechaInicio.Margin = new System.Windows.Forms.Padding(2);
             this.DTFechaInicio.Name = "DTFechaInicio";
             this.DTFechaInicio.Size = new System.Drawing.Size(151, 23);
             this.DTFechaInicio.TabIndex = 14;
@@ -337,7 +337,7 @@
             // 
             this.txtTEPmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTEPmin.Location = new System.Drawing.Point(455, 13);
-            this.txtTEPmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTEPmin.Margin = new System.Windows.Forms.Padding(2);
             this.txtTEPmin.Name = "txtTEPmin";
             this.txtTEPmin.Size = new System.Drawing.Size(74, 24);
             this.txtTEPmin.TabIndex = 11;
@@ -352,7 +352,7 @@
             "Empleados",
             "Presupuesto\t\t\t\t"});
             this.comboBoxTEP.Location = new System.Drawing.Point(334, 13);
-            this.comboBoxTEP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxTEP.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxTEP.Name = "comboBoxTEP";
             this.comboBoxTEP.Size = new System.Drawing.Size(117, 25);
             this.comboBoxTEP.TabIndex = 10;
@@ -379,7 +379,7 @@
             "Por empezar",
             "Pausado"});
             this.comboBoxOrdenaEstado.Location = new System.Drawing.Point(86, 84);
-            this.comboBoxOrdenaEstado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxOrdenaEstado.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxOrdenaEstado.Name = "comboBoxOrdenaEstado";
             this.comboBoxOrdenaEstado.Size = new System.Drawing.Size(117, 25);
             this.comboBoxOrdenaEstado.TabIndex = 8;
@@ -400,7 +400,7 @@
             // 
             this.textBoxBuscarCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxBuscarCategoria.Location = new System.Drawing.Point(86, 50);
-            this.textBoxBuscarCategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxBuscarCategoria.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxBuscarCategoria.Name = "textBoxBuscarCategoria";
             this.textBoxBuscarCategoria.Size = new System.Drawing.Size(114, 24);
             this.textBoxBuscarCategoria.TabIndex = 6;
@@ -421,7 +421,7 @@
             // 
             this.txtNombreBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreBuscar.Location = new System.Drawing.Point(75, 17);
-            this.txtNombreBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombreBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombreBuscar.Name = "txtNombreBuscar";
             this.txtNombreBuscar.Size = new System.Drawing.Size(126, 23);
             this.txtNombreBuscar.TabIndex = 4;
@@ -442,7 +442,7 @@
             // 
             this.btnVerTareas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerTareas.Location = new System.Drawing.Point(163, 411);
-            this.btnVerTareas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnVerTareas.Margin = new System.Windows.Forms.Padding(2);
             this.btnVerTareas.Name = "btnVerTareas";
             this.btnVerTareas.Size = new System.Drawing.Size(102, 37);
             this.btnVerTareas.TabIndex = 18;
@@ -454,7 +454,7 @@
             // 
             this.btnEditarProyecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarProyecto.Location = new System.Drawing.Point(304, 411);
-            this.btnEditarProyecto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEditarProyecto.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditarProyecto.Name = "btnEditarProyecto";
             this.btnEditarProyecto.Size = new System.Drawing.Size(102, 37);
             this.btnEditarProyecto.TabIndex = 19;
@@ -466,7 +466,7 @@
             // 
             this.btnElimarProyecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnElimarProyecto.Location = new System.Drawing.Point(448, 411);
-            this.btnElimarProyecto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnElimarProyecto.Margin = new System.Windows.Forms.Padding(2);
             this.btnElimarProyecto.Name = "btnElimarProyecto";
             this.btnElimarProyecto.Size = new System.Drawing.Size(102, 37);
             this.btnElimarProyecto.TabIndex = 20;
@@ -478,7 +478,7 @@
             // 
             this.btnEditarTaea.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarTaea.Location = new System.Drawing.Point(11, 411);
-            this.btnEditarTaea.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEditarTaea.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditarTaea.Name = "btnEditarTaea";
             this.btnEditarTaea.Size = new System.Drawing.Size(102, 37);
             this.btnEditarTaea.TabIndex = 21;
@@ -490,7 +490,7 @@
             // 
             this.btnVerDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerDescripcion.Location = new System.Drawing.Point(587, 411);
-            this.btnVerDescripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnVerDescripcion.Margin = new System.Windows.Forms.Padding(2);
             this.btnVerDescripcion.Name = "btnVerDescripcion";
             this.btnVerDescripcion.Size = new System.Drawing.Size(127, 37);
             this.btnVerDescripcion.TabIndex = 22;
@@ -502,6 +502,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DarkCyan;
             this.ClientSize = new System.Drawing.Size(725, 459);
             this.Controls.Add(this.btnVerDescripcion);
             this.Controls.Add(this.btnEditarTaea);
@@ -512,7 +513,7 @@
             this.Controls.Add(this.grpboxBuscarProyectos);
             this.Controls.Add(this.dgvProyectos);
             this.Controls.Add(this.menuStripProyectos);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormProyectos";
             this.Text = "FormProyectos";
             ((System.ComponentModel.ISupportInitialize)(this.dgvProyectos)).EndInit();

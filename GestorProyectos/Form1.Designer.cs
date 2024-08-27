@@ -33,19 +33,20 @@
             // 
             // panelPrincipal
             // 
-            this.panelPrincipal.Location = new System.Drawing.Point(12, 11);
+            this.panelPrincipal.Location = new System.Drawing.Point(9, 9);
+            this.panelPrincipal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelPrincipal.Name = "panelPrincipal";
-            this.panelPrincipal.Size = new System.Drawing.Size(1231, 709);
+            this.panelPrincipal.Size = new System.Drawing.Size(923, 576);
             this.panelPrincipal.TabIndex = 0;
             this.panelPrincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPrincipal_Paint);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1255, 721);
+            this.BackColor = System.Drawing.Color.DarkCyan;
+            this.ClientSize = new System.Drawing.Size(941, 586);
             this.Controls.Add(this.panelPrincipal);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "TaskMaster";
             this.Load += new System.EventHandler(this.Form1_Load);

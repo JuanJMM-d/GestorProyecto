@@ -42,6 +42,19 @@ namespace GestorProyectos
         {            
         }
 
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // FormVerDescripcion
+            // 
+            this.BackColor = System.Drawing.Color.DarkCyan;
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "FormVerDescripcion";
+            this.ResumeLayout(false);
+
+        }
+
         private void txtDescripcion_TextChanged(object sender, EventArgs e)
         {
         }
