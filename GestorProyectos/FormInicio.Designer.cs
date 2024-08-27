@@ -146,6 +146,7 @@
             // 
             // panelPerfil
             // 
+            this.panelPerfil.BackColor = System.Drawing.Color.Teal;
             this.panelPerfil.Controls.Add(this.picturePerfilAdmin);
             this.panelPerfil.Controls.Add(this.lblAdmin);
             this.panelPerfil.Dock = System.Windows.Forms.DockStyle.Top;
@@ -211,6 +212,7 @@
             // 
             // panelBarraTitulo
             // 
+            this.panelBarraTitulo.BackColor = System.Drawing.Color.Teal;
             this.panelBarraTitulo.Controls.Add(this.lblMenuActual);
             this.panelBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBarraTitulo.Location = new System.Drawing.Point(202, 0);

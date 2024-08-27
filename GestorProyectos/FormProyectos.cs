@@ -378,8 +378,8 @@ namespace GestorProyectos
             string descripcion = dgvProyectos.SelectedRows[0].Cells["Descripcion"].Value.ToString();
             string nombrePT = dgvProyectos.SelectedRows[0].Cells["Nombre"].Value.ToString();
 
-            FormVerDescripcion formVerDescripcion = new FormVerDescripcion(nombrePT , descripcion, TareasVistas);
-            formVerDescripcion.ShowDialog();
+            //FormVerDescripcion formVerDescripcion = new FormVerDescripcion(nombrePT , descripcion, TareasVistas);
+            //formVerDescripcion.ShowDialog();
         }
     }
 }
