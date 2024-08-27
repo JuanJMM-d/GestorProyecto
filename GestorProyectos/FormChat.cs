@@ -35,6 +35,7 @@ namespace GestorProyectos
                 string mensaje=txbMensaje.Text.Trim();
                 Chat.MensajesEnviados.EnviarMensaje(destinatario, remitente, mensaje);
                 txbChat.Text = Chat.MensajesEnviados.RecibirMensaje(remitente, destinatario);
+                txbMensaje.Clear();
             }
         }
 

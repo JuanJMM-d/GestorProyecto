@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txbChat = new System.Windows.Forms.RichTextBox();
             this.cbDestinatario = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txbMensaje = new System.Windows.Forms.TextBox();
-            this.txbChat = new System.Windows.Forms.RichTextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,6 +50,15 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chat";
+            // 
+            // txbChat
+            // 
+            this.txbChat.Location = new System.Drawing.Point(6, 46);
+            this.txbChat.Name = "txbChat";
+            this.txbChat.ReadOnly = true;
+            this.txbChat.Size = new System.Drawing.Size(366, 311);
+            this.txbChat.TabIndex = 5;
+            this.txbChat.Text = "";
             // 
             // cbDestinatario
             // 
@@ -78,15 +87,6 @@
             this.txbMensaje.TabIndex = 2;
             this.txbMensaje.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txbMensaje_KeyUp);
             // 
-            // txbChat
-            // 
-            this.txbChat.Location = new System.Drawing.Point(6, 46);
-            this.txbChat.Name = "txbChat";
-            this.txbChat.ReadOnly = true;
-            this.txbChat.Size = new System.Drawing.Size(366, 311);
-            this.txbChat.TabIndex = 5;
-            this.txbChat.Text = "";
-            // 
             // FormChat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -94,7 +94,7 @@
             this.ClientSize = new System.Drawing.Size(378, 402);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormChat";
-            this.Text = "FormChat";
+            this.Text = "Comunicate con tu compañeros";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
