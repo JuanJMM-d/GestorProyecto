@@ -23,7 +23,13 @@ namespace GestorProyectos
 
             dtAsignaciones = new DataTable();
             dtAsinacionesAddColumnas();
-            actualizarCantidadTareasYEmpleados();
+
+            tareasConEmpleados = new DataTable();
+            dtTareasYEmpleados();
+
+
+            actualizarCantidadTareasYEmpleadosProyectos();
+            actualizarCantidadTareasYProyectosEmpleados();
         }
 
         
@@ -31,6 +37,8 @@ namespace GestorProyectos
         public  DataTable dtTareas;
         public  DataTable dtEmpleados;
         public DataTable dtAsignaciones;
+       public  DataTable tareasConEmpleados;
+
 
         //Metodo para crear campos en el dtProyectos
         private void dtProyectosAddColumnas()
@@ -54,7 +62,8 @@ namespace GestorProyectos
             dtTareas.Columns.Add("Nombre", typeof(string));
             dtTareas.Columns.Add("Estado", typeof(string));
             dtTareas.Columns.Add("IDProyecto", typeof(string));
-            dtTareas.Columns.Add("DescripcionT", typeof(string));    
+            dtTareas.Columns.Add("IdEmpleado", typeof(string));
+            dtTareas.Columns.Add("Descripcion", typeof(string)); 
         }
 
         private void dtAsinacionesAddColumnas()
@@ -65,33 +74,66 @@ namespace GestorProyectos
 
         }
 
-        //crear campos en dtEmpleados
+        //crear campos en dtEmpleados ///
         private void dtEmpleadosAddCoolumnas()
         {
             dtEmpleados.Columns.Add("IdEmpleado", typeof(string));
             dtEmpleados.Columns.Add("Nombre", typeof(string));
             dtEmpleados.Columns.Add("Rol", typeof(string));
-            dtEmpleados.Columns.Add("Salario", typeof(string));
-
+            dtEmpleados.Columns.Add("Salario", typeof(double));
+      
         }
 
+        //temporal
+        private void dtTareasYEmpleados()
+        {            
+            tareasConEmpleados.Columns.Add("IDTarea");
+            tareasConEmpleados.Columns.Add("NombreTarea");
+            tareasConEmpleados.Columns.Add("EstadoTarea");
+            tareasConEmpleados.Columns.Add("Empleado");
+            tareasConEmpleados.Columns.Add("RolEmpleado");
+            tareasConEmpleados.Columns.Add("Descripcion");
+        }
+
+        public bool IdEmpleadoExiste(string idEmpleado)
+        {
+            return dtEmpleados.AsEnumerable()
+                .Any(row => row.Field<string>("IdEmpleado") == idEmpleado);
+        }
+
+        public void actualizarCantidadTareasYProyectosEmpleados()
+        {
+            foreach (DataRow empleadoRow in dtEmpleados.Rows)
+            {
+                string idEmpleado = empleadoRow["IdEmpleado"].ToString();
+
+                var idsAsignaciones = dtAsignaciones.AsEnumerable().Where(row => row["IdEmpleado"].ToString() == idEmpleado)
+                    .Select(row => row["IDProyectoTarea"].ToString()).ToList();
+
+                int cantidadTareas = idsAsignaciones.Count;
+
+                int cantidadProyectos = dtTareas.AsEnumerable().Where(row => idsAsignaciones.Contains(row["IDProyectoTarea"].ToString()))
+                              .Select(row => row["IDProyecto"].ToString()).Distinct().Count();
 
 
-        public void actualizarCantidadTareasYEmpleados()
+                empleadoRow["Tareas"] = cantidadTareas;
+                empleadoRow["Proyectos"] = cantidadProyectos;
+            }
+        }
+
+        public void actualizarCantidadTareasYEmpleadosProyectos()
         {
             foreach (DataRow proyectoRow in dtProyectos.Rows)
             {
                 string idProyecto = proyectoRow["IDProyecto"].ToString();
 
-                int cantidadTareas = dtTareas.AsEnumerable()
-                                             .Count(row => row["IDProyecto"].ToString() == idProyecto);
-
                 var idsTareas = dtTareas.AsEnumerable().Where(row => row["IDProyecto"].ToString() == idProyecto)
-                                        .Select(row => row["IDProyectoTarea"].ToString());
+                                        .Select(row => row["IDProyectoTarea"].ToString()).ToList();
+
+                int cantidadTareas = idsTareas.Count;
 
                 int cantidadEmpleados = dtAsignaciones.AsEnumerable().Where(row => idsTareas.Contains(row["IDProyectoTarea"].ToString()))
                                                       .Select(row => row["IdEmpleado"].ToString()).Distinct().Count();
-
 
                 proyectoRow["Catidadad_Tareas"] = cantidadTareas;
                 proyectoRow["Empleados"] = cantidadEmpleados;
@@ -111,13 +153,13 @@ namespace GestorProyectos
         // generar IDProyectoTarea
         public string generarIDProyectoTarea()
         {
-            return generarID("T", dtTareas, "IDProyectoTarea");
+            return generarID("Tar", dtTareas, "IDProyectoTarea");
         }
 
         //generar IDAsignacion
         public string generarIDAsignacion()
         {
-            return generarID("ASGN-", dtAsignaciones, "idAsignacion");
+            return generarID("Asg-", dtAsignaciones, "idAsignacion");
         }
 
         //genara el IdPara todos

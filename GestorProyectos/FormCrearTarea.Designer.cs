@@ -30,12 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBoxTareas = new System.Windows.Forms.GroupBox();
+            this.lblAddEmpleadoTarea = new System.Windows.Forms.Label();
+            this.btnCrearTareaOk = new System.Windows.Forms.Button();
             this.lblNombrePoryecto = new System.Windows.Forms.Label();
             this.lblNombreProyecto = new System.Windows.Forms.Label();
             this.btnNuevaTarea = new System.Windows.Forms.Button();
             this.txtDescripcionTarea = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.grpEmpleados = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtEmpleadoSalario = new System.Windows.Forms.TextBox();
             this.AddEmpleado = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.txtIdEmpleado = new System.Windows.Forms.TextBox();
@@ -43,16 +47,12 @@
             this.txtRolEmpleado = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtEmpleadoNombre = new System.Windows.Forms.TextBox();
-            this.btnAddTarea = new System.Windows.Forms.Button();
+            this.btnAddCrearTarea = new System.Windows.Forms.Button();
             this.comboBoxTareaEstado = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtNombreTarea = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.toolTipAyuda = new System.Windows.Forms.ToolTip(this.components);
-            this.btnCrearTareaOk = new System.Windows.Forms.Button();
-            this.lblAddEmpleadoTarea = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtEmpleadoSalario = new System.Windows.Forms.TextBox();
             this.groupBoxTareas.SuspendLayout();
             this.grpEmpleados.SuspendLayout();
             this.SuspendLayout();
@@ -67,7 +67,7 @@
             this.groupBoxTareas.Controls.Add(this.txtDescripcionTarea);
             this.groupBoxTareas.Controls.Add(this.label6);
             this.groupBoxTareas.Controls.Add(this.grpEmpleados);
-            this.groupBoxTareas.Controls.Add(this.btnAddTarea);
+            this.groupBoxTareas.Controls.Add(this.btnAddCrearTarea);
             this.groupBoxTareas.Controls.Add(this.comboBoxTareaEstado);
             this.groupBoxTareas.Controls.Add(this.label11);
             this.groupBoxTareas.Controls.Add(this.txtNombreTarea);
@@ -80,6 +80,28 @@
             this.groupBoxTareas.TabStop = false;
             this.groupBoxTareas.Text = "Tareas";
             this.groupBoxTareas.Enter += new System.EventHandler(this.groupBoxTareas_Enter);
+            // 
+            // lblAddEmpleadoTarea
+            // 
+            this.lblAddEmpleadoTarea.AutoSize = true;
+            this.lblAddEmpleadoTarea.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddEmpleadoTarea.Location = new System.Drawing.Point(572, 23);
+            this.lblAddEmpleadoTarea.Name = "lblAddEmpleadoTarea";
+            this.lblAddEmpleadoTarea.Size = new System.Drawing.Size(16, 22);
+            this.lblAddEmpleadoTarea.TabIndex = 32;
+            this.lblAddEmpleadoTarea.Text = " ";
+            this.lblAddEmpleadoTarea.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblAddEmpleadoTarea.Click += new System.EventHandler(this.lblAddEmpleadoTarea_Click);
+            // 
+            // btnCrearTareaOk
+            // 
+            this.btnCrearTareaOk.Location = new System.Drawing.Point(728, 407);
+            this.btnCrearTareaOk.Name = "btnCrearTareaOk";
+            this.btnCrearTareaOk.Size = new System.Drawing.Size(111, 51);
+            this.btnCrearTareaOk.TabIndex = 31;
+            this.btnCrearTareaOk.Text = "Ok";
+            this.btnCrearTareaOk.UseVisualStyleBackColor = true;
+            this.btnCrearTareaOk.Click += new System.EventHandler(this.btnCrearTareaOk_Click);
             // 
             // lblNombrePoryecto
             // 
@@ -152,6 +174,26 @@
             this.grpEmpleados.Enter += new System.EventHandler(this.grpEmpleados_Enter);
             this.grpEmpleados.MouseHover += new System.EventHandler(this.grpEmpleados_MouseHover);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(10, 152);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 22);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "Salario: ";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtEmpleadoSalario
+            // 
+            this.txtEmpleadoSalario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmpleadoSalario.Location = new System.Drawing.Point(132, 146);
+            this.txtEmpleadoSalario.Name = "txtEmpleadoSalario";
+            this.txtEmpleadoSalario.Size = new System.Drawing.Size(212, 28);
+            this.txtEmpleadoSalario.TabIndex = 28;
+            this.txtEmpleadoSalario.TextChanged += new System.EventHandler(this.txtEmpleadoSalario_TextChanged);
+            // 
             // AddEmpleado
             // 
             this.AddEmpleado.Location = new System.Drawing.Point(229, 180);
@@ -222,15 +264,15 @@
             this.txtEmpleadoNombre.TabIndex = 21;
             this.txtEmpleadoNombre.TextChanged += new System.EventHandler(this.txtEmpleadoNombre_TextChanged);
             // 
-            // btnAddTarea
+            // btnAddCrearTarea
             // 
-            this.btnAddTarea.Location = new System.Drawing.Point(561, 361);
-            this.btnAddTarea.Name = "btnAddTarea";
-            this.btnAddTarea.Size = new System.Drawing.Size(161, 49);
-            this.btnAddTarea.TabIndex = 27;
-            this.btnAddTarea.Text = "Add Tarea";
-            this.btnAddTarea.UseVisualStyleBackColor = true;
-            this.btnAddTarea.Click += new System.EventHandler(this.btnAddTarea_Click);
+            this.btnAddCrearTarea.Location = new System.Drawing.Point(561, 361);
+            this.btnAddCrearTarea.Name = "btnAddCrearTarea";
+            this.btnAddCrearTarea.Size = new System.Drawing.Size(161, 49);
+            this.btnAddCrearTarea.TabIndex = 27;
+            this.btnAddCrearTarea.Text = "Add Tarea";
+            this.btnAddCrearTarea.UseVisualStyleBackColor = true;
+            this.btnAddCrearTarea.Click += new System.EventHandler(this.btnAddCrearTarea_Click);
             // 
             // comboBoxTareaEstado
             // 
@@ -282,48 +324,6 @@
             // 
             this.toolTipAyuda.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTipAyuda_Popup);
             // 
-            // btnCrearTareaOk
-            // 
-            this.btnCrearTareaOk.Location = new System.Drawing.Point(728, 407);
-            this.btnCrearTareaOk.Name = "btnCrearTareaOk";
-            this.btnCrearTareaOk.Size = new System.Drawing.Size(111, 51);
-            this.btnCrearTareaOk.TabIndex = 31;
-            this.btnCrearTareaOk.Text = "Ok";
-            this.btnCrearTareaOk.UseVisualStyleBackColor = true;
-            this.btnCrearTareaOk.Click += new System.EventHandler(this.btnCrearTareaOk_Click);
-            // 
-            // lblAddEmpleadoTarea
-            // 
-            this.lblAddEmpleadoTarea.AutoSize = true;
-            this.lblAddEmpleadoTarea.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddEmpleadoTarea.Location = new System.Drawing.Point(572, 23);
-            this.lblAddEmpleadoTarea.Name = "lblAddEmpleadoTarea";
-            this.lblAddEmpleadoTarea.Size = new System.Drawing.Size(16, 22);
-            this.lblAddEmpleadoTarea.TabIndex = 32;
-            this.lblAddEmpleadoTarea.Text = " ";
-            this.lblAddEmpleadoTarea.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblAddEmpleadoTarea.Click += new System.EventHandler(this.lblAddEmpleadoTarea_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(10, 152);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 22);
-            this.label1.TabIndex = 27;
-            this.label1.Text = "Salario: ";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtEmpleadoSalario
-            // 
-            this.txtEmpleadoSalario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmpleadoSalario.Location = new System.Drawing.Point(132, 146);
-            this.txtEmpleadoSalario.Name = "txtEmpleadoSalario";
-            this.txtEmpleadoSalario.Size = new System.Drawing.Size(212, 28);
-            this.txtEmpleadoSalario.TabIndex = 28;
-            this.txtEmpleadoSalario.TextChanged += new System.EventHandler(this.txtEmpleadoSalario_TextChanged);
-            // 
             // FormCrearTarea
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -354,7 +354,7 @@
         private System.Windows.Forms.TextBox txtRolEmpleado;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtEmpleadoNombre;
-        private System.Windows.Forms.Button btnAddTarea;
+        private System.Windows.Forms.Button btnAddCrearTarea;
         private System.Windows.Forms.ComboBox comboBoxTareaEstado;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtNombreTarea;

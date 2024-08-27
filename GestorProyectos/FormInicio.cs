@@ -13,12 +13,10 @@ namespace GestorProyectos
     
     public partial class FormInicio : Form
     {
-        private string usuarioActivo;
-        public FormInicio(string Usuario)
+
+        public FormInicio()
         {
             InitializeComponent();
-            usuarioActivo = Usuario;
-            lblAdmin.Text = usuarioActivo;
             manejoDeDatos = new ManejoDeDatos();
             formProyectos = new FormProyectos(this);    
         }
@@ -91,30 +89,7 @@ namespace GestorProyectos
 
         }
 
-        private void cambiarDeUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-            Form1 form1 = (Form1)this.ParentForm;
-            form1.CargarForm();
-            this.Close();
-        }
-
-        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void crearUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormCrearEmpleado formCrearEmpleado=new FormCrearEmpleado();
-            formCrearEmpleado.Show();
-        }
-
-        private void btnMenuBuzon_Click(object sender, EventArgs e)
-        {
-            FormChat formChat = new FormChat(usuarioActivo);
-            formChat.Show();
-        }
+       
     }
 
     internal class ManejoDeDatos
