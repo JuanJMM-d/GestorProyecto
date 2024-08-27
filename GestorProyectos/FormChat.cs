@@ -19,10 +19,10 @@ namespace GestorProyectos
         {
             remitenteActual = Remitente;
             InitializeComponent();
-            txbChat.Text = Chat.MensajesEnviados.RecibirMensaje(Remitente);
             cbDestinatario.Items.Clear();
             cbDestinatario.Items.AddRange(Users.ObtenerUsuarios.obtenerUsuarios().ToArray());
             cbDestinatario.SelectedIndex = 0;
+            txbChat.Text = Chat.MensajesEnviados.RecibirMensaje(Remitente, cbDestinatario.SelectedItem.ToString());
         }
 
         private void txbMensaje_KeyUp(object sender, KeyEventArgs e)
@@ -34,13 +34,14 @@ namespace GestorProyectos
                 string destinatario = cbDestinatario.Text;
                 string mensaje=txbMensaje.Text.Trim();
                 Chat.MensajesEnviados.EnviarMensaje(destinatario, remitente, mensaje);
-                txbChat.Text = Chat.MensajesEnviados.RecibirMensaje(remitente);
+                txbChat.Text = Chat.MensajesEnviados.RecibirMensaje(remitente, destinatario);
             }
         }
 
         private void cbDestinatario_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            txbChat.Text = Chat.MensajesEnviados.RecibirMensaje(remitenteActual, cbDestinatario.SelectedItem.ToString());
+            txbMensaje.Focus();
         }
     }
 }
