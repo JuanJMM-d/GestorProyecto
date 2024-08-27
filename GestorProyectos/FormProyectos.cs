@@ -20,21 +20,42 @@ namespace GestorProyectos
             this.formInicio = formInicio;
             btnEditarProyecto.Enabled = false;
             TareasVistas = false;
-
-
+            btnEditarTaea.Enabled = false; btnVerTareas.Enabled = true;
         }
         //variables de campo
         private DatosDeProyectos datosDeProyectos;
         private FormInicio formInicio;
         private bool TareasVistas;
-        
-
+        private string IDProyectoActual = "";
         //actualiza con datatable el dgv desde DatosDeProyectos
         public void ActualizardgvProyectos()
         {
             dgvProyectos.DataSource = datosDeProyectos.dtProyectos;
         }
 
+        private void dgvProyectos_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvProyectos.SelectedRows.Count > 0)
+            {
+                btnEditarProyecto.Enabled = true;
+                btnEditarTaea.Enabled = true;
+                btnElimarProyecto.Enabled = true;
+                btnVerDescripcion.Enabled = true;
+                btnVerTareas.Enabled = true;
+                if (TareasVistas)
+                {
+                    FormCrearProyecto.IDProyectoActual = dgvProyectos.SelectedRows[0].Cells["IDProyecto"].Value.ToString();
+                }
+
+            }
+            else
+            {
+                btnEditarTaea.Enabled = false;
+                btnEditarProyecto.Enabled = false;
+                btnElimarProyecto.Enabled = false;
+                btnVerDescripcion.Enabled = false;
+            }
+        }
         private void FiltrarProyectos()
         {
             DataView filtroDtProyectos = new DataView(datosDeProyectos.dtProyectos);
@@ -125,6 +146,8 @@ namespace GestorProyectos
             DTFechaInicio.Value = DateTime.Now;
             DTFechaFinal.Value = DateTime.Now;
             TareasVistas = false;
+            btnEditarTaea.Enabled = false;
+
 
             ActualizardgvProyectos();
         }
@@ -149,7 +172,7 @@ namespace GestorProyectos
                         string idTarea = tarea.Field<string>("IDProyectoTarea");
                         string nombreTarea = tarea.Field<string>("Nombre");
                         string estadoTarea = tarea.Field<string>("Estado");
-                        string descripcionTarea = tarea.Field<string>("Descripcion"); 
+                        string descripcionTarea = tarea.Field<string>("Descripcion");
 
                         var asignacionesFiltradas = datosDeProyectos.dtAsignaciones.AsEnumerable()
                             .Where(row => row.Field<string>("IDProyectoTarea") == idTarea);
@@ -172,68 +195,109 @@ namespace GestorProyectos
                     }
                 }
                 dgvProyectos.DataSource = datosDeProyectos.tareasConEmpleados;
-                TareasVistas = true;
-            } 
-                        
+                btnVerTareas.Enabled = false;
+                TareasVistas = true; btnEditarProyecto.Enabled = false;
+            }
+
         }
 
         private void btnEditarProyecto_Click(object sender, EventArgs e)
         {
-            FormCrearProyecto formCrearProyecto = new FormCrearProyecto(formInicio, this);
-            formCrearProyecto.ShowDialog(this);
-
-            DataGridViewRow selectedRow = dgvProyectos.SelectedRows[0];
-
-            string idProyecto = selectedRow.Cells["IDProyecto"].Value.ToString();
-            string nombre = selectedRow.Cells["Nombre"].Value.ToString();
-            string categoria = selectedRow.Cells["Categoria"].Value.ToString();
-            string estado = selectedRow.Cells["Estado"].Value.ToString();
-            double presupuesto = Convert.ToDouble(selectedRow.Cells["Presupuesto"].Value);
-            DateTime fechaInicio = Convert.ToDateTime(selectedRow.Cells["Fecha_Inicio"].Value);
-            DateTime fechaFinal = Convert.ToDateTime(selectedRow.Cells["Fecha_Final"].Value);
-            string descripcion = selectedRow.Cells["Descripcion"].Value.ToString();
-
-            formCrearProyecto.editarProyecto(idProyecto, nombre, categoria, estado, presupuesto,
-                fechaInicio, fechaFinal, descripcion);
-
-        }
-        //activar botones sio se selcciona un a fila en el dgv
-        private void dgvProyectos_SelectionChanged(object sender, EventArgs e)
-        {
             if (dgvProyectos.SelectedRows.Count > 0)
             {
-                btnEditarProyecto.Enabled = true;
-                btnEditarTaea.Enabled = true;
-                btnElimarProyecto.Enabled = true;
+                FormCrearProyecto formCrearProyecto = new FormCrearProyecto(formInicio, this);
+
+
+                DataGridViewRow selectedRow = dgvProyectos.SelectedRows[0];
+
+                string idProyecto = selectedRow.Cells["IDProyecto"].Value.ToString();
+                string nombre = selectedRow.Cells["Nombre"].Value.ToString();
+                string categoria = selectedRow.Cells["Categoria"].Value.ToString();
+                string estado = selectedRow.Cells["Estado"].Value.ToString();
+                double presupuesto = Convert.ToDouble(selectedRow.Cells["Presupuesto"].Value);
+                DateTime fechaInicio = Convert.ToDateTime(selectedRow.Cells["Fecha_Inicio"].Value);
+                DateTime fechaFinal = Convert.ToDateTime(selectedRow.Cells["Fecha_Final"].Value);
+                string descripcion = selectedRow.Cells["Descripcion"].Value.ToString();
+
+                formCrearProyecto.editarProyecto(idProyecto, nombre, categoria, estado, presupuesto,
+                    fechaInicio, fechaFinal, descripcion);
+
+                formCrearProyecto.ShowDialog();
+
             }
             else
             {
-                btnEditarTaea.Enabled = false;
-                btnEditarProyecto.Enabled = false;
-                btnElimarProyecto.Enabled = false;  
+                MessageBox.Show("Por favor, selecciona un proyecto para editar.");
             }
+
         }
+        //activar botones sio se selcciona un a fila en el dgv
+
 
         private void btnElimarProyecto_Click(object sender, EventArgs e)
         {
+            if (!TareasVistas)
+            {
+                if (dgvProyectos.SelectedRows.Count > 0)
+                {
 
-            if (dgvProyectos.SelectedRows.Count > 0)
+                    DataGridViewRow selectedRow = dgvProyectos.SelectedRows[0];
+                    string idProyecto = selectedRow.Cells["IDProyecto"].Value.ToString();
+
+                    DialogResult result = MessageBox.Show("¿Estas seguro de que quieres eliminar este proyecto", "aviso", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        // Elimina las tareas relacionadas con el proyecto
+                        var tareasRelacionadas = datosDeProyectos.dtTareas.AsEnumerable()
+                            .Where(row => row.Field<string>("IDProyecto") == idProyecto).ToList();
+
+                        foreach (var tarea in tareasRelacionadas)
+                        {
+                            string idTarea = tarea.Field<string>("IDProyectoTarea");
+
+                            var asignacionesRelacionadas = datosDeProyectos.dtAsignaciones.AsEnumerable()
+                                .Where(row => row.Field<string>("IDProyectoTarea") == idTarea)
+                                .ToList();
+
+                            foreach (var asignacion in asignacionesRelacionadas)
+                            {
+                                datosDeProyectos.dtAsignaciones.Rows.Remove(asignacion);
+                            }
+
+                            datosDeProyectos.dtTareas.Rows.Remove(tarea);
+                        }
+
+                        var proyecto = datosDeProyectos.dtProyectos.AsEnumerable()
+                            .FirstOrDefault(row => row.Field<string>("IDProyecto") == idProyecto);
+
+                        if (proyecto != null)
+                        {
+                            datosDeProyectos.dtProyectos.Rows.Remove(proyecto);
+                        }
+
+                        ActualizardgvProyectos();
+
+                        MessageBox.Show("Proyecto eliminado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, seleccione un proyecto para eliminar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else if (TareasVistas)
             {
 
-                DataGridViewRow selectedRow = dgvProyectos.SelectedRows[0];
-                string idProyecto = selectedRow.Cells["IDProyecto"].Value.ToString();
-
-                DialogResult result = MessageBox.Show("¿Estas seguro de que quieres eliminar este proyecto","aviso", MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
+                if (dgvProyectos.SelectedRows.Count > 0)
                 {
-                    // Elimina las tareas relacionadas con el proyecto
-                    var tareasRelacionadas = datosDeProyectos.dtTareas.AsEnumerable()
-                        .Where(row => row.Field<string>("IDProyecto") == idProyecto).ToList();
+                    string idTarea = IDProyectoActual;
+                    DataGridViewRow selectedRow = dgvProyectos.SelectedRows[0];
+                   
 
-                    foreach (var tarea in tareasRelacionadas)
+                   
+                    DialogResult result = MessageBox.Show(" seguro de que quieres eliminar esta tarea?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (result == DialogResult.Yes)
                     {
-                        string idTarea = tarea.Field<string>("IDProyectoTarea");
-
                         var asignacionesRelacionadas = datosDeProyectos.dtAsignaciones.AsEnumerable()
                             .Where(row => row.Field<string>("IDProyectoTarea") == idTarea)
                             .ToList();
@@ -243,28 +307,28 @@ namespace GestorProyectos
                             datosDeProyectos.dtAsignaciones.Rows.Remove(asignacion);
                         }
 
-                        datosDeProyectos.dtTareas.Rows.Remove(tarea);
+                        var tarea = datosDeProyectos.dtTareas.AsEnumerable()
+                            .FirstOrDefault(row => row.Field<string>("IDProyectoTarea") == idTarea);
+
+                        if (tarea != null)
+                        {
+                            datosDeProyectos.dtTareas.Rows.Remove(tarea);
+                        }
+
+                        MessageBox.Show("Tarea eliminada exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-
-                    var proyecto = datosDeProyectos.dtProyectos.AsEnumerable()
-                        .FirstOrDefault(row => row.Field<string>("IDProyecto") == idProyecto);
-
-                    if (proyecto != null)
-                    {
-                        datosDeProyectos.dtProyectos.Rows.Remove(proyecto);
-                    }
-
-                    ActualizardgvProyectos();
-
-                    MessageBox.Show("Proyecto eliminado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, seleccione una tarea para eliminar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-            else
-            {
-                MessageBox.Show("Por favor, seleccione un proyecto para eliminar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
         }
-        private void dgvProyectos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+    
+
+
+
+            private void dgvProyectos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
         }
@@ -325,11 +389,11 @@ namespace GestorProyectos
             {
                 DataGridViewRow selectedRow = dgvProyectos.SelectedRows[0];
                 string idTarea = selectedRow.Cells["IDTarea"].Value.ToString();
-                string nombreTarea = selectedRow.Cells["NombreTarea"].Value.ToString();
+                string nombreTarea = selectedRow.Cells["Nombre"].Value.ToString();
                 string estadoTarea = selectedRow.Cells["EstadoTarea"].Value.ToString();
                 string empleado = selectedRow.Cells["Empleado"].Value.ToString();
                 string rolEmpleado = selectedRow.Cells["RolEmpleado"].Value.ToString();
-                string descripcionTarea = selectedRow.Cells["DescripcionTarea"].Value.ToString();
+                string descripcionTarea = selectedRow.Cells["Descripcion"].Value.ToString();
                 string idEmpleado = idEmpleadoEsditarTarea(idTarea);
                 double? eSalario = EmpleadoSalarioEditarTarea(idEmpleado);
 
@@ -337,7 +401,7 @@ namespace GestorProyectos
                 FormCrearTarea formCrearTarea = new FormCrearTarea(formInicio);
 
                 formCrearTarea.editarTarea(idTarea, nombreTarea, estadoTarea, empleado, rolEmpleado, descripcionTarea, idEmpleado, eSalario);
-
+                
                 formCrearTarea.ShowDialog();
             }
             else
@@ -376,8 +440,8 @@ namespace GestorProyectos
             string descripcion = dgvProyectos.SelectedRows[0].Cells["Descripcion"].Value.ToString();
             string nombrePT = dgvProyectos.SelectedRows[0].Cells["Nombre"].Value.ToString();
 
-            //FormVerDescripcion formVerDescripcion = new FormVerDescripcion(nombrePT , descripcion, TareasVistas);
-            //formVerDescripcion.ShowDialog();
+            FormVerDescripcion formVerDescripcion = new FormVerDescripcion(nombrePT , descripcion, TareasVistas);
+            formVerDescripcion.ShowDialog();
         }
     }
 }
