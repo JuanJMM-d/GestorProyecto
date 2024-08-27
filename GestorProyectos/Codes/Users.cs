@@ -21,6 +21,20 @@ namespace GestorProyectos.Code
             public static List<Usuarios> Usuarios { get; set; } = new List<Usuarios>();
         }
 
+        public static class ObtenerUsuarios
+        {
+
+            public static List<string> obtenerUsuarios()
+            {   
+                List<string> usuarios = new List<string>();
+                foreach (Usuarios usuario in DatosUsuarios.Usuarios)
+                {
+                    usuarios.Add(usuario.UserName);
+                }
+                return usuarios;
+            }
+        }
+
         public static class Autenticacion
         {
             public static bool ValidarCredenciales(string nombreUsuario, string contrasena)

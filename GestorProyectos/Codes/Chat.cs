@@ -25,23 +25,25 @@ namespace GestorProyectos.Codes
 
         public static class MensajesEnviados
         {
-            public static string RecibirMensaje(string Destinatario)
+            public static string RecibirMensaje(string remitente)
             {
-                string Mensaje = "";
+                string mensajeCompleto = "";
                 foreach (Mensajes mensaje in BaseMensajes.Mensajeria)
                 {
-                    if (mensaje.destinatario == Destinatario)
+                    if (mensaje.remitente == remitente)
                     {
-                        Mensaje += $"{mensaje.remitente} ({mensaje.fecha}): {mensaje.mensaje}\n\n";
+                        mensajeCompleto += $"{mensaje.remitente} ({mensaje.fecha}): {mensaje.mensaje}\n";
                     }
-                    else if (mensaje.remitente == Destinatario)
+                    else if (mensaje.destinatario==remitente)
                     {
-                        Mensaje += $"{mensaje.destinatario} ({mensaje.fecha}): {mensaje.mensaje}\n\n";
+                        mensajeCompleto += $"{mensaje.remitente} ({mensaje.fecha}): {mensaje.mensaje}\n";
+
                     }
                 }
 
-                return Mensaje;
+                return mensajeCompleto;
             }
+
 
             public static bool EnviarMensaje(string Destinatario, string Remitente ,string Mensaje)
             {
@@ -49,6 +51,7 @@ namespace GestorProyectos.Codes
                 mensaje.destinatario = Destinatario;
                 mensaje.remitente = Remitente;
                 mensaje.mensaje = Mensaje;
+                mensaje.fecha = DateTime.Now;
                 BaseMensajes.Mensajeria.Add(mensaje);
 
                 return true;

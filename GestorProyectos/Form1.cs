@@ -31,7 +31,6 @@ namespace GestorProyectos
         {
             //crear instancias de formularios
             formLogin = new FormLogin(this);   // con this enviamos la instancia actual
-            formInicio = new FormInicio();
 
 
             //cargar el form login
@@ -52,8 +51,9 @@ namespace GestorProyectos
         }
 
         ////Metodo para cargar el FormInicio luego de login valido
-        public void CargarFormInicio()
+        public void CargarFormInicio(string Usuario)
         {
+            formInicio = new FormInicio(Usuario);
             this.panelPrincipal.Controls.Clear();
             formInicio.TopLevel = false;
             formInicio.FormBorderStyle = FormBorderStyle.None;

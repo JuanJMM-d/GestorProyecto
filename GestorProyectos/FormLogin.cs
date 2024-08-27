@@ -55,7 +55,7 @@ namespace GestorProyectos
 
                 if (Autenticacion.ValidarCredenciales(user, pass))
                     //llamando al metodo en el form1 para cargar el Form de Inicio
-                    form1.CargarFormInicio();
+                    form1.CargarFormInicio(user);
                 else
                     MessageBox.Show("Credenciales No validas", "Error");
 

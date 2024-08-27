@@ -42,11 +42,11 @@
             this.lblAdmin = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cambiarDeUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.crearUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelBarraTitulo = new System.Windows.Forms.Panel();
             this.lblMenuActual = new System.Windows.Forms.Label();
             this.panelMenuSeleccionado = new System.Windows.Forms.Panel();
-            this.crearUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMenuIzq.SuspendLayout();
             this.panelPerfil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picturePerfilAdmin)).BeginInit();
@@ -103,6 +103,7 @@
             this.btnMenuBuzon.TabIndex = 4;
             this.btnMenuBuzon.Text = "📫 Buzon";
             this.btnMenuBuzon.UseVisualStyleBackColor = true;
+            this.btnMenuBuzon.Click += new System.EventHandler(this.btnMenuBuzon_Click);
             // 
             // btnMenuEmpleados
             // 
@@ -192,6 +193,13 @@
             this.cambiarDeUsuarioToolStripMenuItem.Text = "Cambiar de Usuario";
             this.cambiarDeUsuarioToolStripMenuItem.Click += new System.EventHandler(this.cambiarDeUsuarioToolStripMenuItem_Click);
             // 
+            // crearUsuarioToolStripMenuItem
+            // 
+            this.crearUsuarioToolStripMenuItem.Name = "crearUsuarioToolStripMenuItem";
+            this.crearUsuarioToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.crearUsuarioToolStripMenuItem.Text = "Crear Usuario";
+            this.crearUsuarioToolStripMenuItem.Click += new System.EventHandler(this.crearUsuarioToolStripMenuItem_Click);
+            // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
@@ -229,12 +237,6 @@
             this.panelMenuSeleccionado.Size = new System.Drawing.Size(745, 497);
             this.panelMenuSeleccionado.TabIndex = 2;
             this.panelMenuSeleccionado.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenuSeleccionado_Paint);
-            // 
-            // crearUsuarioToolStripMenuItem
-            // 
-            this.crearUsuarioToolStripMenuItem.Name = "crearUsuarioToolStripMenuItem";
-            this.crearUsuarioToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
-            this.crearUsuarioToolStripMenuItem.Text = "Crear Usuario";
             // 
             // FormInicio
             // 

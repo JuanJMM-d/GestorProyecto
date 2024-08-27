@@ -28,21 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txbChat = new System.Windows.Forms.TextBox();
-            this.txbMensaje = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.cbDestinatario = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txbMensaje = new System.Windows.Forms.TextBox();
+            this.txbChat = new System.Windows.Forms.RichTextBox();
+            this.datosUsuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.datosUsuariosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.datosUsuariosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datosUsuariosBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupBox1.Controls.Add(this.txbChat);
             this.groupBox1.Controls.Add(this.cbDestinatario);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txbMensaje);
-            this.groupBox1.Controls.Add(this.txbChat);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
@@ -51,21 +56,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chat";
             // 
-            // txbChat
+            // cbDestinatario
             // 
-            this.txbChat.Location = new System.Drawing.Point(6, 46);
-            this.txbChat.Multiline = true;
-            this.txbChat.Name = "txbChat";
-            this.txbChat.Size = new System.Drawing.Size(366, 311);
-            this.txbChat.TabIndex = 1;
-            // 
-            // txbMensaje
-            // 
-            this.txbMensaje.Location = new System.Drawing.Point(6, 376);
-            this.txbMensaje.Name = "txbMensaje";
-            this.txbMensaje.Size = new System.Drawing.Size(366, 20);
-            this.txbMensaje.TabIndex = 2;
-            this.txbMensaje.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txbMensaje_KeyUp);
+            this.cbDestinatario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDestinatario.FormattingEnabled = true;
+            this.cbDestinatario.Location = new System.Drawing.Point(12, 19);
+            this.cbDestinatario.Name = "cbDestinatario";
+            this.cbDestinatario.Size = new System.Drawing.Size(354, 21);
+            this.cbDestinatario.TabIndex = 4;
+            this.cbDestinatario.SelectedIndexChanged += new System.EventHandler(this.cbDestinatario_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -76,13 +75,30 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Presiona enter para enviar";
             // 
-            // cbDestinatario
+            // txbMensaje
             // 
-            this.cbDestinatario.FormattingEnabled = true;
-            this.cbDestinatario.Location = new System.Drawing.Point(12, 19);
-            this.cbDestinatario.Name = "cbDestinatario";
-            this.cbDestinatario.Size = new System.Drawing.Size(354, 21);
-            this.cbDestinatario.TabIndex = 4;
+            this.txbMensaje.Location = new System.Drawing.Point(6, 376);
+            this.txbMensaje.Name = "txbMensaje";
+            this.txbMensaje.Size = new System.Drawing.Size(366, 20);
+            this.txbMensaje.TabIndex = 2;
+            this.txbMensaje.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txbMensaje_KeyUp);
+            // 
+            // txbChat
+            // 
+            this.txbChat.Location = new System.Drawing.Point(6, 46);
+            this.txbChat.Name = "txbChat";
+            this.txbChat.ReadOnly = true;
+            this.txbChat.Size = new System.Drawing.Size(366, 311);
+            this.txbChat.TabIndex = 5;
+            this.txbChat.Text = "";
+            // 
+            // datosUsuariosBindingSource
+            // 
+            this.datosUsuariosBindingSource.DataSource = typeof(GestorProyectos.Code.Users.DatosUsuarios);
+            // 
+            // datosUsuariosBindingSource1
+            // 
+            this.datosUsuariosBindingSource1.DataSource = typeof(GestorProyectos.Code.Users.DatosUsuarios);
             // 
             // FormChat
             // 
@@ -94,6 +110,8 @@
             this.Text = "FormChat";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.datosUsuariosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datosUsuariosBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -103,7 +121,9 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txbMensaje;
-        private System.Windows.Forms.TextBox txbChat;
         private System.Windows.Forms.ComboBox cbDestinatario;
+        private System.Windows.Forms.RichTextBox txbChat;
+        private System.Windows.Forms.BindingSource datosUsuariosBindingSource1;
+        private System.Windows.Forms.BindingSource datosUsuariosBindingSource;
     }
 }
