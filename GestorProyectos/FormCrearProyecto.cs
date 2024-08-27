@@ -21,6 +21,9 @@ namespace GestorProyectos
             datosDeProyectos = formInicio.GetDatosDeProyectos();
             formProyectos = formProyectosExistente;
             this.formInicio = formInicio;
+            lblProyecto.Text = "Creando proyecto...";
+            btnCrearEditProyecto.Text = "Crear Proyecto";
+            EditandoP = false;
         }
 
         //variables globales
@@ -29,43 +32,99 @@ namespace GestorProyectos
         public static bool ProyectoCreado = false;
         public static string IDProyectoActual;
         public static string NombrePoryectoActual = "";
-
+        private bool EditandoP;
+        private string IdProyectoEdit="";
 
         public void LanzarFormCrearTarea()
         {
             FormCrearTarea formCrearTarea = new FormCrearTarea(formInicio);
-            formCrearTarea.ShowDialog(); // Muestra el formulario de manera modal
+            formCrearTarea.ShowDialog(); //// Muestra el formulario de manera modal
         }
 
         private void FormCrearProyecto_Load(object sender, EventArgs e)
         {
 
         }
+        //metodo pra editar el proyecto
+        public void editarProyecto(string idProyecto, string nombre,string  categoria,string estado, 
+            double presupuesto, DateTime  fechaInicio,DateTime fechaFinal, string descripcion)
+        {
+            EditandoP = true;
+            IDProyectoActual = idProyecto;
+            lblProyecto.Text = "Editando proyecto..."; btnCrearEditProyecto.Text = "Editar Proyecto";
+            txtNombreProyecto.Text = nombre;
+            txtCategoriaProyecto.Text= categoria;
+            comBoxEstadoProyecto.SelectedItem = estado;
+            txtPresupuestoProyecto.Text = Convert.ToString(presupuesto);
+            dateTimeInicioProyecto.Value = fechaInicio;
+            dateTimeLimiteProyecto.Value= fechaFinal;
+            txtDescripcionProyecto.Text = descripcion;
+        }
+
+       
+
 
         //boton para crearlo
-        private void btnCrearProyecto_Click(object sender, EventArgs e)
+        private void btnCrearEditProyecto_Click(object sender, EventArgs e)
         {
             if (ValidarDatosCrearProyecto())
             {
                 // si es valido mandar datos al datsatable
-                string IDProyecto = datosDeProyectos.generarIDProyecto();
-                string pNombre = txtNombreProyecto.Text.Trim();
-                string pCategoria = txtCategoriaProyecto.Text.Trim();
-                string pEstado = comBoxEstadoProyecto.SelectedItem.ToString();
-                double pPresupuesto = double.Parse(txtPresupuestoProyecto.Text.Trim());
-                string fechaIn = dateTimeInicioProyecto.Value.ToString("dd/MM/yyyy");
-                string fechaFin = dateTimeLimiteProyecto.Value.ToString("dd/MM/yyyy");
-                string pDescrip = txtDescripcionProyecto.Text;
+                string IDProyecto;
+                if (EditandoP)
+                {
+                    string idProyecto = IDProyectoActual;
+                    string pNombre = txtNombreProyecto.Text.Trim();
+                    string pCategoria = txtCategoriaProyecto.Text.Trim();
+                    string pEstado = comBoxEstadoProyecto.SelectedItem.ToString();
+                    double pPresupuesto = double.Parse(txtPresupuestoProyecto.Text.Trim());
+                    string fechaIn = dateTimeInicioProyecto.Value.ToString("dd/MM/yyyy");
+                    string fechaFin = dateTimeLimiteProyecto.Value.ToString("dd/MM/yyyy");
+                    string pDescrip = txtDescripcionProyecto.Text;
 
-                datosDeProyectos.dtProyectos.Rows.Add(IDProyecto, pNombre, pCategoria, pEstado, pPresupuesto, fechaIn, fechaFin, pDescrip);
-                formProyectos.ActualizardgvProyectos();
+                    DataRow rowToEdit = datosDeProyectos.dtProyectos.AsEnumerable()
+                        .FirstOrDefault(row => row.Field<string>("IDProyecto") == idProyecto);
 
-                IDProyectoActual = IDProyecto;
-                NombrePoryectoActual = txtNombreProyecto.Text;
-                datosDeProyectos.actualizarCantidadTareasYEmpleados();
-                LanzarFormCrearTarea();
+                    if (rowToEdit != null)
+                    {
+                        rowToEdit["Nombre"] = pNombre;
+                        rowToEdit["Categoria"] = pCategoria;
+                        rowToEdit["Estado"] = pEstado;
+                        rowToEdit["Presupuesto"] = pPresupuesto;
+                        rowToEdit["Fecha_Inicio"] = fechaIn;
+                        rowToEdit["Fecha_Final"] = fechaFin;
+                        rowToEdit["Descripcion"] = pDescrip;
+
+                        formProyectos.ActualizardgvProyectos();
+                        datosDeProyectos.actualizarCantidadTareasYEmpleadosProyectos();
+                    }
+                    else
+                    {
+                        MessageBox.Show("El proyecto no se encuentra en la base de datos");
+                    }
+                }
+                else if (!EditandoP)
+                {
+                    IDProyecto = datosDeProyectos.generarIDProyecto();
+                    string pNombre = txtNombreProyecto.Text.Trim();
+                    string pCategoria = txtCategoriaProyecto.Text.Trim();
+                    string pEstado = comBoxEstadoProyecto.SelectedItem.ToString();
+                    double pPresupuesto = double.Parse(txtPresupuestoProyecto.Text.Trim());
+                    string fechaIn = dateTimeInicioProyecto.Value.ToString("dd/MM/yyyy");
+                    string fechaFin = dateTimeLimiteProyecto.Value.ToString("dd/MM/yyyy");
+                    string pDescrip = txtDescripcionProyecto.Text;
+
+                    datosDeProyectos.dtProyectos.Rows.Add(IDProyecto, pNombre, pCategoria, pEstado, pPresupuesto, fechaIn, fechaFin, pDescrip);
+                    formProyectos.ActualizardgvProyectos();
+
+                    IDProyectoActual = IDProyecto;
+                    NombrePoryectoActual = txtNombreProyecto.Text;
+                    datosDeProyectos.actualizarCantidadTareasYEmpleadosProyectos();
+                    LanzarFormCrearTarea();
+                }
+                
             }
-            else MessageBox.Show("err");
+            else MessageBox.Show("error");
 
         }
 
@@ -184,6 +243,9 @@ namespace GestorProyectos
 
         }
 
-      
+        private void lblProyecto_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

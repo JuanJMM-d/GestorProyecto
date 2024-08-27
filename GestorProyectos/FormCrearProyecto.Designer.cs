@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,18 +42,9 @@
             this.dateTimeLimiteProyecto = new System.Windows.Forms.DateTimePicker();
             this.dateTimeInicioProyecto = new System.Windows.Forms.DateTimePicker();
             this.txtDescripcionProyecto = new System.Windows.Forms.TextBox();
-            this.btnCrearProyecto = new System.Windows.Forms.Button();
+            this.btnCrearEditProyecto = new System.Windows.Forms.Button();
+            this.lblProyecto = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(285, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(244, 29);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Creando Proyecto...";
             // 
             // label2
             // 
@@ -207,25 +197,37 @@
             this.txtDescripcionProyecto.TabIndex = 14;
             this.txtDescripcionProyecto.TextChanged += new System.EventHandler(this.txtDescripcionProyecto_TextChanged);
             // 
-            // btnCrearProyecto
+            // btnCrearEditProyecto
             // 
-            this.btnCrearProyecto.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnCrearProyecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCrearProyecto.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnCrearProyecto.Location = new System.Drawing.Point(543, 428);
-            this.btnCrearProyecto.Name = "btnCrearProyecto";
-            this.btnCrearProyecto.Size = new System.Drawing.Size(203, 42);
-            this.btnCrearProyecto.TabIndex = 15;
-            this.btnCrearProyecto.Text = "Crear Proyecto";
-            this.btnCrearProyecto.UseVisualStyleBackColor = false;
-            this.btnCrearProyecto.Click += new System.EventHandler(this.btnCrearProyecto_Click);
+            this.btnCrearEditProyecto.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnCrearEditProyecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCrearEditProyecto.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnCrearEditProyecto.Location = new System.Drawing.Point(543, 428);
+            this.btnCrearEditProyecto.Name = "btnCrearEditProyecto";
+            this.btnCrearEditProyecto.Size = new System.Drawing.Size(203, 42);
+            this.btnCrearEditProyecto.TabIndex = 15;
+            this.btnCrearEditProyecto.Text = "Crear Proyecto";
+            this.btnCrearEditProyecto.UseVisualStyleBackColor = false;
+            this.btnCrearEditProyecto.Click += new System.EventHandler(this.btnCrearEditProyecto_Click);
+            // 
+            // lblProyecto
+            // 
+            this.lblProyecto.AutoSize = true;
+            this.lblProyecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProyecto.Location = new System.Drawing.Point(272, 24);
+            this.lblProyecto.Name = "lblProyecto";
+            this.lblProyecto.Size = new System.Drawing.Size(244, 29);
+            this.lblProyecto.TabIndex = 16;
+            this.lblProyecto.Text = "Creando Proyecto...";
+            this.lblProyecto.Click += new System.EventHandler(this.lblProyecto_Click);
             // 
             // FormCrearProyecto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(857, 482);
-            this.Controls.Add(this.btnCrearProyecto);
+            this.Controls.Add(this.lblProyecto);
+            this.Controls.Add(this.btnCrearEditProyecto);
             this.Controls.Add(this.txtDescripcionProyecto);
             this.Controls.Add(this.dateTimeInicioProyecto);
             this.Controls.Add(this.dateTimeLimiteProyecto);
@@ -240,7 +242,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Name = "FormCrearProyecto";
             this.Text = "FormCrearProyecto";
             this.Load += new System.EventHandler(this.FormCrearProyecto_Load);
@@ -250,8 +251,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -266,6 +265,7 @@
         private System.Windows.Forms.DateTimePicker dateTimeLimiteProyecto;
         private System.Windows.Forms.DateTimePicker dateTimeInicioProyecto;
         private System.Windows.Forms.TextBox txtDescripcionProyecto;
-        private System.Windows.Forms.Button btnCrearProyecto;
+        private System.Windows.Forms.Button btnCrearEditProyecto;
+        private System.Windows.Forms.Label lblProyecto;
     }
 }

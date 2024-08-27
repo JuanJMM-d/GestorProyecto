@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvProyectos = new System.Windows.Forms.DataGridView();
             this.menuStripProyectos = new System.Windows.Forms.MenuStrip();
             this.menuStripOrdenar = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,7 +63,10 @@
             this.txtNombreBuscar = new System.Windows.Forms.TextBox();
             this.lblProyectoVer = new System.Windows.Forms.Label();
             this.btnVerTareas = new System.Windows.Forms.Button();
-            this.btnVerEmpleados = new System.Windows.Forms.Button();
+            this.btnEditarProyecto = new System.Windows.Forms.Button();
+            this.btnElimarProyecto = new System.Windows.Forms.Button();
+            this.btnEditarTaea = new System.Windows.Forms.Button();
+            this.btnVerDescripcion = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProyectos)).BeginInit();
             this.menuStripProyectos.SuspendLayout();
             this.grpboxBuscarProyectos.SuspendLayout();
@@ -71,30 +74,32 @@
             // 
             // dgvProyectos
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProyectos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProyectos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvProyectos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProyectos.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProyectos.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvProyectos.Location = new System.Drawing.Point(12, 217);
             this.dgvProyectos.Name = "dgvProyectos";
             this.dgvProyectos.RowHeadersWidth = 51;
             this.dgvProyectos.RowTemplate.Height = 35;
+            this.dgvProyectos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProyectos.Size = new System.Drawing.Size(924, 227);
             this.dgvProyectos.TabIndex = 0;
             this.dgvProyectos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProyectos_CellContentClick);
+            this.dgvProyectos.SelectionChanged += new System.EventHandler(this.dgvProyectos_SelectionChanged);
             // 
             // menuStripProyectos
             // 
@@ -415,29 +420,67 @@
             // btnVerTareas
             // 
             this.btnVerTareas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerTareas.Location = new System.Drawing.Point(279, 507);
+            this.btnVerTareas.Location = new System.Drawing.Point(218, 507);
             this.btnVerTareas.Name = "btnVerTareas";
             this.btnVerTareas.Size = new System.Drawing.Size(126, 46);
             this.btnVerTareas.TabIndex = 18;
             this.btnVerTareas.Text = "Ver Tareas";
             this.btnVerTareas.UseVisualStyleBackColor = true;
+            this.btnVerTareas.Click += new System.EventHandler(this.btnVerTareas_Click);
             // 
-            // btnVerEmpleados
+            // btnEditarProyecto
             // 
-            this.btnVerEmpleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerEmpleados.Location = new System.Drawing.Point(460, 507);
-            this.btnVerEmpleados.Name = "btnVerEmpleados";
-            this.btnVerEmpleados.Size = new System.Drawing.Size(150, 46);
-            this.btnVerEmpleados.TabIndex = 19;
-            this.btnVerEmpleados.Text = "Ver Empleados";
-            this.btnVerEmpleados.UseVisualStyleBackColor = true;
+            this.btnEditarProyecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarProyecto.Location = new System.Drawing.Point(392, 507);
+            this.btnEditarProyecto.Name = "btnEditarProyecto";
+            this.btnEditarProyecto.Size = new System.Drawing.Size(150, 46);
+            this.btnEditarProyecto.TabIndex = 19;
+            this.btnEditarProyecto.Text = "Editar";
+            this.btnEditarProyecto.UseVisualStyleBackColor = true;
+            this.btnEditarProyecto.Click += new System.EventHandler(this.btnEditarProyecto_Click);
+            // 
+            // btnElimarProyecto
+            // 
+            this.btnElimarProyecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnElimarProyecto.Location = new System.Drawing.Point(569, 507);
+            this.btnElimarProyecto.Name = "btnElimarProyecto";
+            this.btnElimarProyecto.Size = new System.Drawing.Size(150, 46);
+            this.btnElimarProyecto.TabIndex = 20;
+            this.btnElimarProyecto.Text = "Eliminar ";
+            this.btnElimarProyecto.UseVisualStyleBackColor = true;
+            this.btnElimarProyecto.Click += new System.EventHandler(this.btnElimarProyecto_Click);
+            // 
+            // btnEditarTaea
+            // 
+            this.btnEditarTaea.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarTaea.Location = new System.Drawing.Point(39, 507);
+            this.btnEditarTaea.Name = "btnEditarTaea";
+            this.btnEditarTaea.Size = new System.Drawing.Size(126, 46);
+            this.btnEditarTaea.TabIndex = 21;
+            this.btnEditarTaea.Text = "Editar Tarea";
+            this.btnEditarTaea.UseVisualStyleBackColor = true;
+            this.btnEditarTaea.Click += new System.EventHandler(this.btnEditarTaea_Click);
+            // 
+            // btnVerDescripcion
+            // 
+            this.btnVerDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerDescripcion.Location = new System.Drawing.Point(756, 507);
+            this.btnVerDescripcion.Name = "btnVerDescripcion";
+            this.btnVerDescripcion.Size = new System.Drawing.Size(169, 46);
+            this.btnVerDescripcion.TabIndex = 22;
+            this.btnVerDescripcion.Text = "Ver Descripcion";
+            this.btnVerDescripcion.UseVisualStyleBackColor = true;
+            this.btnVerDescripcion.Click += new System.EventHandler(this.btnVerDescripcion_Click);
             // 
             // FormProyectos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(967, 565);
-            this.Controls.Add(this.btnVerEmpleados);
+            this.Controls.Add(this.btnVerDescripcion);
+            this.Controls.Add(this.btnEditarTaea);
+            this.Controls.Add(this.btnElimarProyecto);
+            this.Controls.Add(this.btnEditarProyecto);
             this.Controls.Add(this.btnVerTareas);
             this.Controls.Add(this.lblProyectoVer);
             this.Controls.Add(this.grpboxBuscarProyectos);
@@ -488,8 +531,11 @@
         private System.Windows.Forms.Button btnBuscarProyecto;
         private System.Windows.Forms.Label lblProyectoVer;
         private System.Windows.Forms.Button btnVerTareas;
-        private System.Windows.Forms.Button btnVerEmpleados;
+        private System.Windows.Forms.Button btnEditarProyecto;
         private System.Windows.Forms.Button btnLimpiarFiltros;
         private System.Windows.Forms.TextBox txtTEPmax;
+        private System.Windows.Forms.Button btnElimarProyecto;
+        private System.Windows.Forms.Button btnEditarTaea;
+        private System.Windows.Forms.Button btnVerDescripcion;
     }
 }
