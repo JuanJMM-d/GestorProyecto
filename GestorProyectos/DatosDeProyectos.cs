@@ -88,9 +88,9 @@ namespace GestorProyectos
         private void dtTareasYEmpleados()
         {            
             tareasConEmpleados.Columns.Add("IDTarea");
-            tareasConEmpleados.Columns.Add("NombreTarea");
-            tareasConEmpleados.Columns.Add("EstadoTarea");
-            tareasConEmpleados.Columns.Add("Empleado");
+            tareasConEmpleados.Columns.Add("Nombre");
+            tareasConEmpleados.Columns.Add("Estado");
+            tareasConEmpleados.Columns.Add("Empleados");
             tareasConEmpleados.Columns.Add("RolEmpleado");
             tareasConEmpleados.Columns.Add("Descripcion");
         }

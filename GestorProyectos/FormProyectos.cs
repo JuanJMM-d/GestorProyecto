@@ -390,8 +390,8 @@ namespace GestorProyectos
                 DataGridViewRow selectedRow = dgvProyectos.SelectedRows[0];
                 string idTarea = selectedRow.Cells["IDTarea"].Value.ToString();
                 string nombreTarea = selectedRow.Cells["Nombre"].Value.ToString();
-                string estadoTarea = selectedRow.Cells["EstadoTarea"].Value.ToString();
-                string empleado = selectedRow.Cells["Empleado"].Value.ToString();
+                string estadoTarea = selectedRow.Cells["Estado"].Value.ToString();
+                string empleado = selectedRow.Cells["Empleados"].Value.ToString();
                 string rolEmpleado = selectedRow.Cells["RolEmpleado"].Value.ToString();
                 string descripcionTarea = selectedRow.Cells["Descripcion"].Value.ToString();
                 string idEmpleado = idEmpleadoEsditarTarea(idTarea);

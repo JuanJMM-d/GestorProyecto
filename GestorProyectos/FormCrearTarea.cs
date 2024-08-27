@@ -50,9 +50,10 @@ namespace GestorProyectos
         private FormProyectos formProyectos;
         
         public void editarTarea(string idTarea, string nombreTarea, string estadoTarea,
-                           string empleadoNombre, string rolEmpleado, string descripcionTarea, string idEmpleado, double? eSalario)
+              string empleadoNombre, string rolEmpleado, string descripcionTarea, string idEmpleado, double? eSalario)
         {
-            editantoTarea=true; 
+            editantoTarea=true;
+            btnAddCrearTarea.Text = "Editar Tarea";
             txtNombreTarea.Text = nombreTarea;
             comboBoxTareaEstado.SelectedItem = estadoTarea;
             txtDescripcionTarea.Text = descripcionTarea;
@@ -63,11 +64,16 @@ namespace GestorProyectos
             txtEmpleadoSalario.Text = eSalario?.ToString();
             IDTareaEditando = idTarea;
 
-            grpEmpleados.Enabled = false;
-            AddEmpleado.Enabled = true;
-            btnNuevaTarea.Enabled = false;
+            AddEmpleado.Enabled = true;            
+            btnNuevaTarea.Enabled = true;
             
         }
+
+
+
+
+
+
 
         private void btnAddCrearTarea_Click(object sender, EventArgs e)
         {
@@ -84,38 +90,36 @@ namespace GestorProyectos
                 datosDeProyectos.dtTareas.Rows.Add(IdProyectoTarea, tNombre, tEstado, IDProyecto, IdEmpleado, tDescripcion);
 
                 grpEmpleados.Enabled = true;
-                lblAddEmpleadoTarea.Text = $"Add Empleados a Tarea: {tNombre}";
+                lblAddEmpleadoTarea.Text = $"Añadir Empleados a Tarea: {tNombre}";
                 toolTipAyuda.Hide(grpEmpleados);
 
                 formProyectos.ActualizardgvProyectos();
                 formEmpleadosInicio.ActualizardgvEmpleados();
                 datosDeProyectos.actualizarCantidadTareasYEmpleadosProyectos();
-                
+
+                MessageBox.Show("Tarea creada exitosamente.");
+                btnAddCrearTarea.Enabled = false;
+                btnNuevaTarea.Enabled = true;
             }
-            else if (ValidarTarea())
+            else if (ValidarTarea() && editantoTarea)
             {
-                //editando tarea
                 string tNombre = txtNombreTarea.Text;
                 string tEstado = comboBoxTareaEstado.SelectedItem.ToString();
                 string tDescripcion = txtDescripcionTarea.Text;
                 string IDProyecto = FormCrearProyecto.IDProyectoActual;
 
-
                 DataRow rowEditar = datosDeProyectos.dtTareas.AsEnumerable()
-                        .FirstOrDefault(row => row.Field<string>("IDProyectoTarea") == IDTareaEditando);
+                    .FirstOrDefault(row => row.Field<string>("IDProyectoTarea") == IDTareaEditando);
 
                 if (rowEditar != null)
                 {
-                    rowEditar["Nombre"] = txtNombreTarea.Text;
-                    rowEditar["Estado"] = comboBoxTareaEstado.SelectedItem.ToString();
-                    rowEditar["DescripcionT"] = txtDescripcionTarea.Text;
-
-                    datosDeProyectos.actualizarCantidadTareasYEmpleadosProyectos();
-                    formEmpleadosInicio.ActualizardgvEmpleados();
-                    formProyectos.ActualizardgvProyectos();
-                    
+                    rowEditar["Nombre"] = tNombre;
+                    rowEditar["Estado"] = tEstado;
+                    rowEditar["Descripcion"] = tDescripcion;
+                    editantoTarea = false;
+                    MessageBox.Show("Tarea editada exitosamente");
+                    this.Close();
                 }
-                btnNuevaTarea.Enabled = true;
             }
         }
 
@@ -174,11 +178,17 @@ namespace GestorProyectos
 
         private void AddEmpleado_Click(object sender, EventArgs e)
         {
-            if(editantoTarea)
+            if (editantoTarea)
             {
-                 vaciaAddEmpleado(); editantoTarea = false;
+                DialogResult result = MessageBox.Show("Deseas agregar un nuevo empleado?", "Agregar Empleado", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    vaciaAddEmpleado(); editantoTarea = false;
+                }                
             }
-           else  if (ValidarEmpleado() && !datosDeProyectos.IdEmpleadoExiste(txtIdEmpleado.Text))
+
+            else if (ValidarEmpleado() && !datosDeProyectos.IdEmpleadoExiste(txtIdEmpleado.Text))
             {
                  string idEmpleado = txtIdEmpleado.Text;
                 string nombreEmpleado = txtEmpleadoNombre.Text;
@@ -198,15 +208,25 @@ namespace GestorProyectos
         }
         private void btnNuevaTarea_Click(object sender, EventArgs e)
         {
-            btnNuevaTarea.Enabled = false;
-            contTarea = 0;
-         IdProyectoTarea = "";
-         IDTareaEditando = "";
-        iniciarVariables();
-            vaciarTareas();
+            DialogResult result = MessageBox.Show("Deseas agregar una nueva tarea?", "Agregar Tarea", MessageBoxButtons.YesNo);
 
-
+            if (result == DialogResult.Yes)
+            {
+                editantoTarea = false;
+                btnNuevaTarea.Enabled = false;
+                btnAddCrearTarea.Text = "Add Tarea";
+                contTarea = 0;
+                IdProyectoTarea = "";
+                IDTareaEditando = "";
+                vaciaAddEmpleado();
+                vaciarTareas();
+                btnAddCrearTarea.Enabled = true;
+                
+                iniciarVariables();
+               
+            }
         }
+
 
 
         private bool ValidarEmpleado()
